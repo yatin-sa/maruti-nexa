@@ -1,0 +1,109 @@
+.knowldege_banner {
+    background: url("../../../public/MarutiSuzuki_Assets/banner_secondary.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px 0;
+    height: 400px;
+    margin-bottom: 80px;
+}
+
+.knowldege_banner h1 {
+    text-align: left;
+    font: normal normal medium 50px/70px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.knowldege_banner p {
+    text-align: left;
+    font: normal normal normal 30px/35px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.job_card p i {
+    font-size: 40px;
+}
+
+.job_card p {
+    text-align: center;
+}
+
+.job_card h2 {
+    font-size: 15px;
+    color: #fff;
+}
+
+.job_card {
+    margin-bottom: 20px;
+}
+
+
+/* filter */
+
+.knowldge_filter_head {
+    background: #E3E3E3 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    padding: 15px;
+
+}
+
+.knowldge_filter_head_border {
+    margin: 30px 0;
+    border: 1px solid #C4C4C4;
+}
+
+.knowldge_filter_head h2 {
+    text-align: left;
+    font: normal normal 500 24px/32px Roboto;
+    letter-spacing: 0px;
+    color: #4B4B4B;
+}
+
+.knowldge_filter_head h2 img {
+    margin-right: 15px;
+    width: 20px;
+    height: 24px;
+}
+
+.knowldge_filter_body_label {
+    text-align: left;
+    font: normal normal 500 24px/32px Roboto;
+    letter-spacing: 0px;
+    color: #0D0C12;
+}
+
+.knowldge_filter_body label {
+    text-align: left;
+    font: normal normal normal 20px/26px Roboto;
+    letter-spacing: 0px;
+    color: #5D5D5D;
+}
+
+.knowldge_filter_body .form-check-input {
+    transform: scale(2);
+    margin-right: 20px;
+    border-radius: 0 !important;
+    margin-left: -15px !important;
+}
+
+.form-check {
+    margin-bottom: 25px !important;
+}
+.knowledge_content .card{
+    padding: 20px 15px;
+    background: #2D3394 0% 0% no-repeat padding-box;
+}
+.knowledge_content .card i{
+    color: #fff;
+}
+.knowledge_content .card p{
+    margin-bottom: 0;
+}
+.knowledge_content .card  h2{
+    font: normal normal normal 21px/21px Roboto;
+letter-spacing: 0px;
+color: #fff;
+margin-bottom: 0;
+}

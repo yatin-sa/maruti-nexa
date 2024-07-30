@@ -1,0 +1,8 @@
+.quiz_day_card{
+    margin-bottom: 90px !important;
+    background: #000;
+}
+
+.quiz_day_card i{
+    font-size: 40px;
+}

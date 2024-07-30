@@ -1,0 +1,93 @@
+.terms-container {
+  margin: 20px;
+  padding: 0;
+  background: url(Logo.jpg);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainbox {
+  max-width: 460px;
+  background-color: rgb(66, 62, 62);
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 60px 30px;
+}
+.toptext {
+  padding: 0 20px;
+  height: 400px;
+  overflow-y: auto;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+
+.toptext ::-webkit-scrollbar {
+  width: 2px;
+  background-color: #282828;
+}
+
+.toptext ::-webkit-scrollbar-thumb {
+  background-color: #d13639;
+}
+
+.toptext h2 {
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+.toptext h3 {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.toptext p {
+  text-align: left;
+  color: #f1f1f1;
+}
+
+.mainbox h4 {
+  font-size: 13px;
+  text-align: center;
+  padding: 0 40px;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+.mainbox h4 span {
+  color: #d13639;
+}
+
+.conditionbuttons {
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.mainbtn {
+  height: 50px;
+  width: calc(50%-6px);
+  border: 0;
+  border-radius: 6px;
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.acceptred-btn {
+  background-color: #d13639;
+}
+
+.grey-btn {
+  background-color: #282828;
+}
+
+.mainbtn:hover {
+  opacity: 0.6;
+}

@@ -1,0 +1,84 @@
+.calender_wrap {
+  width: "350px";
+  max-width: "100%";
+  background: "#fff";
+  background-color: #fff;
+  border: "1px solid #a0a096";
+  font-family: "Arial, Helvetica, sans-serif";
+  line-height: "1.125em";
+  padding: 20px 5px;
+  border: 1px solid #000;
+  margin-left: 34px;
+  height: 292px;
+}
+.main_home_banner{
+  background: url("../../../public/mmast2.png");
+  background-size: auto;
+  height: 360px;
+  padding: 70px;
+  width: 100%;
+}
+.main_home_banner h2{
+  font-size: 50px;
+  font-weight: bold;
+  color: #2d3494;
+}
+.cal_w {
+  display: inline-block;
+}
+.calender_wrap ul {
+  list-style-type: none;
+  margin-top: 20px;
+  padding-left: 0;
+  padding: 10px 5px;
+}
+.calender_wrap ul > li {
+  display: inline-block;
+  /* You can also add some margins here to make it look prettier */
+}
+.img_wrap {
+  background: "#61c1db" !important;
+  background-color: "#61c1db" !important;
+  width: "64px";
+  height: "64px";
+  border-radius: "3px";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+.img_wrap img {
+  width: "64px" !important;
+  height: "64px" !important;
+  background: "#61c1db" !important;
+  background-color: "#61c1db" !important;
+}
+.session_time {
+  color: rgb(199, 80, 0);
+}
+.calender_wrap p,
+.calender_wrap p a {
+  margin-bottom: 0;
+  font-size: 12px;
+  text-decoration: none;
+}
+.session_type {
+  color: #000;
+}
+.pill_session {
+  background: #fff;
+  color: #000;
+  padding: 2px 5px;
+  border-radius: 50px;
+  border: 1px solid #000;
+  font-size: 10px;
+}
+.cal_title {
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 1px solid #000;
+}

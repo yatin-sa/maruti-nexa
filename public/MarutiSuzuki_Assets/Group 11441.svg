@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="251.477" height="207.012" viewBox="0 0 251.477 207.012">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0"/>
+      <stop offset="1" stop-color="#777"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00b78c"/>
+      <stop offset="1" stop-color="#249177"/>
+    </linearGradient>
+    <filter id="Rectangle_2287" x="0" y="0" width="251.477" height="134.479" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_11441" data-name="Group 11441" transform="translate(15 15)">
+    <rect id="Rectangle_2288" data-name="Rectangle 2288" width="21.616" height="114.553" transform="translate(43.398 77.459)" fill="url(#radial-gradient)"/>
+    <rect id="Rectangle_2289" data-name="Rectangle 2289" width="21.616" height="114.553" transform="translate(156.463 77.459)" fill="url(#radial-gradient)"/>
+    <g transform="matrix(1, 0, 0, 1, -15, -15)" filter="url(#Rectangle_2287)">
+      <g id="Rectangle_2287-2" data-name="Rectangle 2287" transform="translate(15 15)" stroke="#fff" stroke-width="2" fill="url(#linear-gradient)">
+        <rect width="221.477" height="104.479" rx="5" stroke="none"/>
+        <rect x="1" y="1" width="219.477" height="102.479" rx="4" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

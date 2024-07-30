@@ -1,0 +1,757 @@
+.home_right_card {
+  /* background: #fff; */
+  /* padding: 20px; */
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  /* margin-bottom: 20px; */
+}
+
+.home_right_card h3 {
+  font-size: 15px;
+  border-bottom: 2px solid #2d3494;
+  margin-bottom: 20px;
+}
+
+.home_right_card h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-bottom: 13px;
+}
+
+.home_right_card h1:after {
+  background-color: #2d3494;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+
+
+.circle_wrap {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.leaderboard_circle {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  border: 10px solid #ffffff;
+}
+
+.leaderboard_circle hr {
+  margin: 1px 20px;
+}
+
+.leaderboard_circle span {
+  font-size: 15px;
+  line-height: 2.5em;
+  color: #FFF !important;
+}
+
+.promotion_img {
+  width: 100%;
+}
+
+.promotion_content_wrap {
+  position: relative;
+}
+
+.promotion_content {
+  position: absolute;
+  top: 60%;
+  color: #fff;
+  padding: 10px;
+  /* left: 10%; */
+  /* transform: translate(-50%, -10%); */
+}
+
+.promotion_content_head {
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.promotion_content_link a {
+  font-size: 10px;
+  color: #fff;
+  padding: 0;
+}
+
+/* .home_right_card_content ol li {
+    list-style-type: decimal;
+    display: list-item;
+    } */
+.home_right_card_content ol {
+  counter-reset: headings;
+  padding: 0;
+}
+
+ol>li {
+  position: relative;
+  /* Create a positioning context */
+  padding: 4px 8px;
+  /* Add some spacing around the content */
+  list-style: none;
+  /* Disable the normal item numbering */
+  border-bottom: 1px solid #666;
+}
+
+ol>li:last-child {
+  border-bottom: none;
+}
+
+body {
+  counter-reset: headings;
+}
+
+ol>li:before {
+  background: none repeat scroll 0 0 #2d3494;
+  border-radius: 15px;
+  color: #ffffff;
+  counter-increment: headings;
+  content: counter(headings, decimal);
+  display: block;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  height: 25px;
+  line-height: 26px;
+  margin-bottom: 0;
+  margin-right: 5px;
+  text-indent: 8px;
+  width: 25px;
+}
+
+.home_right_card_content {
+  height: 225px;
+}
+
+.home_right_card_content ol li p {
+  font-size: 12px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.home_right_card_content ol li p a {
+  font-size: 10px;
+  padding: 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+.carousel .right>i {
+  left: auto;
+  right: 20px;
+}
+
+/* banner */
+.home_banner {
+  background-image: url("../../../public/Group 11394@2x.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 717px;
+  /* UI Properties */
+  /* background: #000000 0% 0% no-repeat padding-box; */
+  opacity: 0.95;
+  padding: 200px;
+}
+
+.home_banner h2 {
+  text-align: left;
+  font: normal normal 300 50px/70px Roboto;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+.home_banner p{
+  font: normal normal 300 22px/35px Roboto;
+letter-spacing: 0px;
+color: #FFFFFF;
+}
+.home_banner button{
+  width: 175px;
+height: 53px;
+/* UI Properties */
+background: #00FFF5 0% 0% no-repeat padding-box;
+border-radius: 5px;
+opacity: 1;
+
+text-align: center;
+font: normal normal medium 22px/100px Adobe Clean;
+letter-spacing: 0px;
+color: #2D3394;
+}
+
+
+/*  mylearning  */
+.mylearning{
+  background: url('../../../public/MarutiSuzuki_Assets/list_bg_1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  padding: 146px 120px;
+  
+  
+}
+.mylearning h2{
+  text-align: left;
+font: normal normal bold 45px/20px Roboto;
+letter-spacing: 2.02px;
+color: #FFFFFF;
+margin-bottom: 30px;
+}
+.ms_recomcarousel .col-3{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+/* social list */
+.ms_social_posts h2{
+  text-align: left;
+  font: normal normal bold 45px/20px Roboto;
+  letter-spacing: 2.02px;
+  color: #2D3394;
+  margin-bottom: 32px;
+}
+.ms_social_posts h2 a{
+  text-align: left;
+font: normal normal 500 22px/37px Poppins;
+letter-spacing: 0px;
+color: #2D3394;
+text-decoration: none;
+cursor: pointer;
+}
+.ms_social_posts h2 a img{
+  width: 9px;
+height: 18px;
+margin-left: 15px;
+}
+.ms_social_post_item{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border-radius: 20px;
+padding: 23px 24px;
+margin-bottom: 50px;
+}
+.ms_social_post_item img{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.ms_social_post_item_content{
+  padding: 5px 20px;
+}
+.ms_social_post_item h4{
+  text-align: left;
+font: normal normal 600 20px/20px Plus Jakarta Sans;
+letter-spacing: 0px;
+color: #0D0C12;
+margin-bottom: 13px;
+}
+.ms_social_post_item span{
+font: normal normal 600 12px/20px Plus Jakarta Sans;
+letter-spacing: 0px;
+color: #6F6F6F;
+}
+.ms_social_post_item p{
+  text-align: left;
+font: normal normal 500 17px/19px Plus Jakarta Sans;
+letter-spacing: 0px;
+color: #6F6F6F;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+margin-bottom: 0;
+}
+/*  recoomentdation peer */
+.ms_recomm{
+  background: url('../../../public/MarutiSuzuki_Assets/list_bg_2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  padding: 146px 120px;
+  
+  
+}
+.ms_recomm h2{
+  text-align: left;
+font: normal normal bold 45px/20px Roboto;
+letter-spacing: 2.02px;
+color: #FFFFFF;
+margin-bottom: 30px;
+}
+
+
+.ms_recomcarousel{
+  position: relative;
+}
+.carousel-button-group{
+  position: absolute;
+  top: -55px;
+  left: auto;
+  right: -20px !important
+}
+.carousel-item-padding-40-px{
+  /* margin-right: 26px; */
+}
+
+
+
+
+/* question of day */
+.ms_quizday{
+  padding: 30px 0;
+  background: #fff;
+}
+.ms_quizday h2 {
+  text-align: left;
+  /* font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal; */
+  font: normal normal bold 45px/20px Roboto;
+  letter-spacing: 2.02px;
+  color: #2D3394;
+  opacity: 1;
+  margin-bottom: 30px;
+}
+.ms_quizday h2 a {
+  text-align: left;
+  font: normal normal 500 22px/37px Poppins;
+letter-spacing: 0px;
+color: #2D3394;
+text-decoration: none;
+cursor: pointer;
+}
+.ms_quizday h2 a img{
+  margin-left: 15px;
+  width: 9px;
+height: 18px;
+}
+.ms_quizday p{
+  text-align: left;
+font: normal normal normal 28px/42px Roboto;
+letter-spacing: 1.26px;
+color: #0D0C12;
+}
+.ms_quiz_design{
+  display: flex;
+  background: #0D0C12 0% 0% no-repeat padding-box;
+border-radius: 20px;
+padding: 30px;
+justify-content: space-between;
+align-items: center;
+margin: 112px auto;
+  /* background: url("../../../public/MarutiSuzuki_Assets/Group 11469.svg");
+  background-repeat: no-repeat;
+  height: 140px; */
+}
+.ms_quiz_design p{
+  text-align: left;
+font: normal normal normal 30px/25px Roboto;
+letter-spacing: 0px;
+color: #EAEAFF;
+}
+.ms_quiz_btn{
+  padding: 22px 30px;
+  background: #C3FFFD 0% 0% no-repeat padding-box;
+  border-radius: 15px;
+  text-decoration: none;
+font: normal normal normal 24px/20px Roboto;
+letter-spacing: 0px;
+color: #0D0C12;
+}
+.ms_quiz_icon{
+  margin-top: -71px;
+    margin-left: -30px;
+}
+
+
+
+.ms_annoucment h2{
+  text-align: left;
+font: normal normal bold 24px/32px Roboto;
+letter-spacing: 0px;
+color: #2D3394;
+text-transform: uppercase;
+padding-bottom: 15px;
+border-bottom: 1px solid #2D3394;
+margin-bottom: 20px;
+}
+
+
+.ms_annoucment p{
+  text-align: left;
+font: normal normal normal 22px/34px Roboto;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+
+
+
+
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (max-width:600px)  { 
+  .home_right_card h3 {
+    font-size: 15px;
+    border-bottom: 2px solid #2d3494;
+    margin-bottom: 20px;
+  }
+  
+  .home_right_card h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-bottom: 13px;
+  }
+  
+  .home_right_card h1:after {
+    background-color: #2d3494;
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100px;
+    margin-bottom: 5px;
+  }
+  
+  
+  
+  .circle_wrap {
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .leaderboard_circle {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    border: 10px solid #ffffff;
+  }
+  
+  .leaderboard_circle hr {
+    margin: 1px 20px;
+  }
+  
+  .leaderboard_circle span {
+    font-size: 15px;
+    line-height: 2.5em;
+    color: #FFF !important;
+  }
+  
+  .promotion_img {
+    width: 100%;
+  }
+  
+  .promotion_content_wrap {
+    position: relative;
+  }
+  
+  .promotion_content {
+    position: absolute;
+    top: 60%;
+    color: #fff;
+    padding: 10px;
+    /* left: 10%; */
+    /* transform: translate(-50%, -10%); */
+  }
+  
+  .promotion_content_head {
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #fff;
+  }
+  
+  .promotion_content_link a {
+    font-size: 10px;
+    color: #fff;
+    padding: 0;
+  }
+  
+  /* .home_right_card_content ol li {
+      list-style-type: decimal;
+      display: list-item;
+      } */
+  .home_right_card_content ol {
+    counter-reset: headings;
+    padding: 0;
+  }
+  
+  ol>li {
+    position: relative;
+    /* Create a positioning context */
+    padding: 4px 8px;
+    /* Add some spacing around the content */
+    list-style: none;
+    /* Disable the normal item numbering */
+    border-bottom: 1px solid #666;
+  }
+  
+  ol>li:last-child {
+    border-bottom: none;
+  }
+  
+  body {
+    counter-reset: headings;
+  }
+  
+  ol>li:before {
+    background: none repeat scroll 0 0 #2d3494;
+    border-radius: 15px;
+    color: #ffffff;
+    counter-increment: headings;
+    content: counter(headings, decimal);
+    display: block;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 26px;
+    margin-bottom: 0;
+    margin-right: 5px;
+    text-indent: 8px;
+    width: 25px;
+  }
+  
+  .home_right_card_content {
+    height: 225px;
+  }
+  
+  .home_right_card_content ol li p {
+    font-size: 12px;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .home_right_card_content ol li p a {
+    font-size: 10px;
+    padding: 0;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(-50%);
+  }
+  
+  .carousel .right>i {
+    left: auto;
+    right: 20px;
+  }
+  
+
+
+  /* banner */
+  .home_banner {
+    background-size: 100% 90%;
+    height: 300px;
+    padding: 60px 0;
+  }
+  
+  .home_banner h2 {
+    font: normal normal 300 25px/35px Roboto;
+  }
+  .home_banner p{
+    font: normal normal 300 11px/17px Roboto;
+  }
+  .home_banner button{
+    width: 175px;
+  height: 53px;
+  /* UI Properties */
+  background: #00FFF5 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  opacity: 1;
+  
+  text-align: center;
+  font: normal normal medium 22px/100px Adobe Clean;
+  letter-spacing: 0px;
+  color: #2D3394;
+  }
+  
+  
+  /*  mylearning  */
+  .mylearning{
+    background-size: 100% 100%;
+    padding: 70px 0px; 
+  }
+
+  .mylearning h2{
+  font: normal normal bold 22.5px/10px Roboto;
+  letter-spacing: 1.02px;
+  margin-bottom: 15px;
+  }
+  .ms_recomcarousel .col-3{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  
+  /* social list */
+  .ms_social_posts h2{
+    font: normal normal bold 22.5px/15px Roboto;
+    letter-spacing: 1.02px;
+    margin-bottom: 20px;
+  }
+  .ms_social_posts h2 a{
+  font: normal normal 500 11px/18px Poppins;
+  }
+  .ms_social_posts h2 a img{
+    width: 9px;
+  height: 18px;
+  margin-left: 15px;
+  }
+  .ms_social_post_item{
+  border-radius: 10px;
+  padding: 11px 12px;
+  margin-bottom: 25px;
+  }
+  .ms_social_post_item img{
+    width: 25px;
+    height: 25px;
+  }
+  .ms_social_post_item_content{
+    padding: 5px 10px;
+  }
+  .ms_social_post_item h4{
+  font: normal normal 600 10px/10px Plus Jakarta Sans;
+  margin-bottom: 8px;
+  }
+  .ms_social_post_item span{
+  font: normal normal 600 9px/10px Plus Jakarta Sans;
+  }
+  .ms_social_post_item p{
+  font: normal normal 500 9px/10px Plus Jakarta Sans;
+  }
+
+  /*  recoomentdation peer */
+  .ms_recomm{
+    background-size: 100% 100%;
+    padding: 70px 0px; 
+  }
+  .ms_recomm h2{
+  font: normal normal bold 20.5px/10px Roboto;
+  letter-spacing: 1.02px;
+  margin-bottom: 30px;
+  }
+  
+  .carousel-button-group{
+    position: absolute;
+    top: -55px;
+    left: auto;
+    right: -10px !important
+  }
+  .carousel-button-group img{
+    width: 12px;
+  }
+  .carousel-button-group button {
+    width: 25px;
+  }
+  .carousel-item-padding-40-px{
+    /* margin-right: 26px; */
+  }
+  
+  
+  
+  
+  /* question of day */
+  .ms_quizday{
+    padding: 20px 0;
+    background: #fff;
+  }
+  .ms_quizday h2 {
+    font: normal normal bold 22.5px/20px Roboto;
+    letter-spacing: 1.02px;
+    margin-bottom: 15px;
+  }
+  .ms_quizday h2 a {
+    font: normal normal 500 11px/18.5px Poppins;
+  }
+  .ms_quizday h2 a img{
+    margin-left: 15px;
+    width: 9px;
+  height: 18px;
+  }
+  .ms_quizday p{
+  font: normal normal normal 14px/21px Roboto;
+  letter-spacing: 1.26px;
+  }
+  .ms_quiz_design{
+  border-radius: 15px;
+  padding: 15px;
+  margin: 60px auto;
+  }
+  .ms_quiz_design p{
+  font: normal normal normal 13px/13px Roboto;
+  }
+  .ms_quiz_btn{
+    padding: 11px 8px;
+    border-radius: 7px;
+  font: normal normal normal 12px/10px Roboto;
+  }
+  .ms_quiz_icon{
+    margin-top: -51px;
+      margin-left: -15px;
+      height: 60px;
+  }
+  .ms_quiz_design div:nth-child(2){
+    flex: 2;
+    padding: 2px 5px;
+  }
+  
+
+
+
+
+
+  
+  .ms_annoucment h2{
+    text-align: left;
+  font: normal normal bold 24px/32px Roboto;
+  letter-spacing: 0px;
+  color: #2D3394;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #2D3394;
+  margin-bottom: 20px;
+  }
+  
+  
+  .ms_annoucment p{
+    text-align: left;
+  font: normal normal normal 22px/34px Roboto;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  }
+  
+  
+   
+}
+
+
+

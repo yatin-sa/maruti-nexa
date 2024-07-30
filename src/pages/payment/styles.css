@@ -1,0 +1,56 @@
+.header-container {
+  display: flow-root;
+  width: 100%;
+  font-family: "Soleil", sans-serif;
+}
+
+.quantity {
+  border: 1px solid grey;
+  width: 50px !important;
+  margin-left: 5px;
+}
+
+.header {
+  float: left;
+  font-family: "Soleil", sans-serif;
+}
+
+.header-container img {
+  height: 25px;
+  float: right;
+}
+.payment_container {
+  border-bottom: 2px solid #2d3494;
+  margin-bottom: 10px;
+  font-family: "Soleil", sans-serif;
+  color: #1c1137;
+}
+.heading_title {
+  margin-bottom: 0px;
+  font-family: "Soleil", sans-serif;
+  color: #1c1137;
+  font-size: 2rem;
+}
+.first_half {
+  align-items: center;
+  display: flex;
+}
+.heading {
+  justify-content: space-between;
+  display: flex;
+}
+.payment_qty input[type="text"] {
+  width: 100% !important;
+  padding: 0 !important;
+}
+.paymentradiobtn {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+}
+.paymentradiobtn_head {
+  position: relative;
+}
+.custom_del_btn {
+  padding: 5px;
+}

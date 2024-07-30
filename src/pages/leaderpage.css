@@ -1,0 +1,484 @@
+.leaderboard_banner {
+    background: url("../../public/MarutiSuzuki_Assets/banner_secondary.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px 0;
+    height: 400px;
+}
+
+.leaderboard_banner h2 {
+    text-align: left;
+    font: normal normal 500 50px/70px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.leaderboard_banner p {
+    text-align: left;
+    font: normal normal normal 30px/35px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+/* speedometer */
+.leaderboard_banner_speedometer{
+    background: url('../../public/MarutiSuzuki_Assets/speedo.png');
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    padding: 40px 30px;
+    margin-bottom: 100px;
+}
+.leaderboard_banner_speedometer_center{
+    flex: 1;
+}
+.leaderboard_banner_speedometer_left,.leaderboard_banner_speedometer_right{
+    flex: 1;
+}
+.leaderboard_banner_speedometer_left h4,.leaderboard_banner_speedometer_right h4{
+    text-align: left;
+font: normal normal 500 24px/19px Roboto;
+letter-spacing: 0px;
+color: #0D0C12;
+}
+.leaderboard_banner_speedometer_right h4,.leaderboard_banner_speedometer_right h5{
+    text-align: right !important;
+}
+.leaderboard_banner_speedometer_left h5,.leaderboard_banner_speedometer_right h5{
+    text-align: left;
+    font: normal normal 500 24px/21px Roboto;
+    letter-spacing: 0px;
+    color: #2D3394;
+    opacity: 1;
+}
+
+
+  .speed_wrap{
+    position: relative;
+  }
+  .speed__wheel {
+    left: 0; 
+  right: 0; 
+  top: -30px;
+  margin-left: auto; 
+  margin-right: auto; 
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #000;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%);
+    
+  }
+  
+  .sub_ticks {
+    position: absolute;
+    bottom: 50%;
+    left: 15px;
+    width: 130px;
+    height: 2px;
+    transform-origin: right center;
+    border-left: 10px solid #3eedf2;
+}
+
+.sub_ticks1 {
+    position: absolute;
+    bottom: 50%;
+    left: 15px;
+    width: 130px;
+    height: 2px;
+    transform-origin: right center;
+    border-left: 10px solid red;
+}
+.sub_ticks1 span{
+    color: #fff;
+    transform-origin: 10px 145px;
+    transform: (-90deg);
+}
+  
+  .pointer {
+    position: relative;
+    background: #2D3394;
+    height: 190px;
+    width: 20px;
+    left: 140px;
+    top: 3px;
+    clip-path: polygon(9px 10px, 11px 10px, 20px 150px, 10px 190px, 0 150px);
+    transform-origin: 10px 145px;
+    animation: animate-pointer 10s ease-in-out infinite;
+  }
+  
+  .pointer::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: gray;
+    top: 140px;
+    left: 5px;
+    border-radius: 50%;
+  }
+  
+  .endpoint {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: grey;
+    top: 225px;
+    left: 235px;
+    border-radius: 50%;
+  }
+  
+  @keyframes animate-pointer {
+    0% {
+      transform: rotate(-130deg);
+    }
+    80% {
+      transform: rotate(120deg);
+    }
+    100% {
+      transform: rotate(-130deg);
+    }
+  }
+
+
+
+/* post banner */
+.leaderboard_progressbar_wrap{
+    position: relative;
+}
+.leaderboard_progressbar_car{
+   position: absolute;
+   bottom: 40px;
+   left: -20px;
+   width: 250px;
+}
+.leaderboard_progressbar_rect{
+    position: absolute;
+    bottom: 50px;
+    right: -20px;
+ }
+.leaderboard_postbanner {
+    margin: 90px 0;
+}
+.leaderboard_progressbar_wrap_text{
+    position: absolute;
+    top: -165px;
+    right: 15px;
+    text-align: center;
+font: normal normal 500 22px/29px Roboto;
+letter-spacing: 0px;
+color: #fff;
+z-index: 9999999;
+text-transform: uppercase;
+}
+
+.leaderboard_progressbar {
+    height: 51px;
+    /* UI Properties */
+    background: transparent linear-gradient(90deg, #FF0000 0%, #FF7F00 20%, #E2E2E2 42%, #E2E2E2 50%, #FFC400 68%, #589FFF 100%) 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    opacity: 1;
+    z-index: inherit;
+}
+
+/* levels */
+.leaderboard_levels{
+    display: flex;
+    margin: 14px 0;
+}
+.leaderboard_levels_item{
+    flex: 1;
+}
+.leaderboard_levels_item h4{
+    text-align: center;
+font: normal normal normal 24px/32px Roboto;
+letter-spacing: 0px;
+color: #0D0C12;
+}
+/* leaderboard list */
+.leaderboard_scorelist {
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #9494EA;
+    display: flex;
+    /* padding: 50px; */
+    padding: 30px 50px;
+    opacity: 0.8;
+    margin-top: 40px;
+}
+
+.leaderboard_scorelist_left img {
+    width: 60px;
+    height: 52px;
+    margin: 25px 0;
+    margin-right: 30px;
+}
+
+.leaderboard_scorelist_item {
+    display: flex;
+    margin: 20px 0;
+}
+
+
+.leaderboard_scorelist_item_circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background: #17238d 0% 0% no-repeat padding-box;
+    margin-right: 10px;
+    text-align: center;
+    color: #fff;
+    font: normal normal 600 22px/60px Poppins;
+}
+
+.leaderboard_scorelist_item h4 {
+    text-align: left;
+    font: normal normal 500 18px/27px Poppins;
+    letter-spacing: 0.13px;
+    color: #2D3394;
+}
+
+.leaderboard_scorelist_item span {
+    text-align: right;
+    font: normal normal normal 18px/26px Poppins;
+    letter-spacing: 0px;
+    color: #2D3394;
+    margin: 0 10px;
+}
+
+.leaderboard_scorelist_item p {
+    text-align: left;
+    font: normal normal normal 16px/26px Poppins;
+    letter-spacing: 0px;
+    color: #7E84A3;
+}
+
+/* leaderboard_info */
+.leaderboard_info{
+    margin: 80px 0;
+}
+.leaderboard_info_item{
+    margin: 30px 0;
+}
+.leaderboard_info .leaderboard-heading2 {
+    text-align: left;
+    font: normal normal bold 27px/30px Roboto;
+    letter-spacing: 0px;
+    color: #2D3394;
+    margin-bottom: 20px;
+
+}
+
+.leaderboard_info .leaderboard-heading3 {
+    text-align: left;
+    font: normal normal normal 18px/20px Roboto;
+    letter-spacing: 0px;
+    color: #0D0C12;
+
+}
+
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (max-width:600px)  { 
+
+
+    .leaderboard_banner {
+        padding: 200px 0;
+        height: 400px;
+    }
+    .leaderboard_banner h2 {
+        font: normal normal 500 25px/40px Roboto;
+        margin-bottom: 10px;
+    }
+    .leaderboard_banner p {
+        font: normal normal normal 20px/25px Roboto;
+    }
+    /* speedometer */
+    .leaderboard_banner_speedometer{
+        height: 200px;
+        background-size: 106% 100%;
+        padding: 20px 20px;
+        margin-bottom: 70px;
+    }
+    .leaderboard_banner_speedometer_left h4,.leaderboard_banner_speedometer_right h4{
+    font: normal normal 500 16px/16px Roboto;
+    }
+    .leaderboard_banner_speedometer_left h5,.leaderboard_banner_speedometer_right h5{
+        font: normal normal 500 16px/18px Roboto;
+    }
+     
+      .speed__wheel {
+        left: 0; 
+      right: 0; 
+      top: -5px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%);
+        
+      }
+      
+      .sub_ticks {
+        bottom: 50%;
+        left: 15px;
+        width: 60px;
+        height: 2px;
+        transform-origin: right center;
+        border-left: 10px solid #3eedf2;
+    }
+    
+    .sub_ticks1 {
+        position: absolute;
+        bottom: 50%;
+        left: 15px;
+        width: 60px;
+        height: 2px;
+        transform-origin: right center;
+        border-left: 10px solid red;
+    }
+    .sub_ticks1 span{
+        transform-origin: 10px 145px;
+        transform: (-90deg);
+        font-size: 10px;
+    }
+      
+      .pointer {
+        position: relative;
+        background: #2D3394;
+        height: 90px;
+        width: 15px;
+        left: 70px;
+        top: 5px;
+        clip-path: polygon(9px 10px, 11px 10px, 20px 150px, 10px 190px, 0 150px);
+        transform-origin: 10px 100px;
+        animation: animate-pointer 10s ease-in-out infinite;
+      }
+      
+      .pointer::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: gray;
+        top: 140px;
+        left: 5px;
+        border-radius: 50%;
+      }
+      
+      .endpoint {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: grey;
+        top: 225px;
+        left: 235px;
+        border-radius: 50%;
+      }
+      
+      @keyframes animate-pointer {
+        0% {
+          transform: rotate(-130deg);
+        }
+        80% {
+          transform: rotate(120deg);
+        }
+        100% {
+          transform: rotate(-130deg);
+        }
+      }
+    
+    
+    .leaderboard_progressbar_car{
+       bottom: 15px;
+       left: -20px;
+       width: 100px;
+    }
+    .leaderboard_progressbar_rect{
+        bottom: 22px;
+        right: 0px;
+        height: 90px;
+     }
+    .leaderboard_postbanner {
+        margin: 45px 0;
+    }
+    .leaderboard_progressbar_wrap_text{
+        top: -70px;
+        right: 12px;
+    font: normal normal 500 10px/10px Roboto;
+    }
+    
+    .leaderboard_progressbar {
+        height: 25px;
+        border-radius: 8px;
+        z-index: 999
+    }
+    .leaderboard_levels{
+        margin: 7px 0;
+    }
+    .leaderboard_levels_item h4{
+    font: normal normal normal 14px/16px Roboto;
+    }
+    /* leaderboard list */
+    .leaderboard_scorelist {
+        padding: 15px 20px;
+        margin-top: 20px;
+    }
+    
+    .leaderboard_scorelist_left img {
+        width: 60px;
+        height: 52px;
+        margin: 25px 0;
+        margin-right: 30px;
+        display: none;
+    }
+    
+    .leaderboard_scorelist_item {
+        display: flex;
+        margin: 10px 0;
+    }
+    
+    
+    .leaderboard_scorelist_item_circle {
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        font: normal normal 600 20px/40px Poppins;
+    }
+    
+    .leaderboard_scorelist_item h4 {
+        font: normal normal 500 14px/14px Poppins;
+    }
+    
+    .leaderboard_scorelist_item span {
+        font: normal normal normal 12px/16px Poppins;
+        margin: 0 10px;
+    }
+    
+    .leaderboard_scorelist_item p {
+        font: normal normal normal 10px/16px Poppins;
+        margin-bottom: 0;
+    }
+    
+    /* leaderboard_info */
+    .leaderboard_info{
+        margin: 20px 0;
+    }
+    .leaderboard_info_item{
+        margin: 30px 0;
+    }
+
+
+
+.leaderboard_info .leaderboard-heading3 {
+    font: normal normal normal 12px/14px Roboto;
+
+}
+.leaderboard_info .leaderboard-heading2 {
+    font: normal normal bold 14px/16px Roboto;
+    margin-bottom: 10px;
+
+}
+ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }

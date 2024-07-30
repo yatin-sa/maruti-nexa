@@ -1,0 +1,10 @@
+.icon_link{
+    float: right;
+    cursor: pointer;
+}
+.cata_card{
+    margin: 10px;
+}
+.cata_card p{
+    margin-bottom: 0;
+}

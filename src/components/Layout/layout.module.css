@@ -1,0 +1,50 @@
+.headerContainer {
+  /* background-image: linear-gradient(135deg, #334468, #d42758); */
+}
+.content {
+  display: flex;
+  width: 100%;
+  padding: 10px 40px;
+  justify-content: space-between;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(
+    94.3deg,
+    rgba(26, 33, 64, 1) 10.9%,
+    rgba(81, 84, 115, 1) 87.1%
+  );
+  color: #fff;
+  text-align: center;
+}
+.linkEffect {
+  cursor: pointer;
+}
+.text {
+  color: #fff;
+}
+.active {
+  color: red;
+}
+.link {
+  color: #fff;
+}
+.jumboImg {
+  background-image: url("../../assets/img/banner.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 220px;
+}
+
+.jumboChild {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (min-width: 1400px) {
+  .jumboImg {
+    height: 440px;
+  }
+}

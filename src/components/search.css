@@ -1,0 +1,81 @@
+.searchInput {
+  background: #fff;
+  width: 150%;
+  margin-left: 50px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.searchInput input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput.active input {
+  border-radius: 5px 5px 0 0;
+}
+
+.resultBox {
+  padding: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  background: #fff;
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+}
+
+.searchInput.active .resultBox {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.resultBox li {
+  list-style: none;
+  padding: 8px 12px;
+  /* display: none; */
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.resultBox li img {
+  width: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.searchInput.active .resultBox li {
+  display: block;
+}
+
+.resultBox li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.resultBox li:hover {
+  background: #efefef;
+}
+
+.searchInput .icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #2d3494;
+  cursor: pointer;
+}

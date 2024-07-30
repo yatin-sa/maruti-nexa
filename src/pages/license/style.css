@@ -1,0 +1,12 @@
+
+.icon_wrap{
+    border: 1px solid #E30613;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+    width: 75px;
+  }
+  .main_price{
+    margin: 40px;
+  }
