@@ -92,14 +92,13 @@ const HeaderLayout = () => {
 
   if (isNil(accessToken)) return <></>;
 
-
   return (
     <div>
       <header>
         <nav className={"navbar navbar-expand-lg "+headerClass}>
           <div className="container-fluid">
             <a className="navbar-brand" href="/courses">
-              <img src="/540-5401700_trusted-by-maruti-suzuki-nexa-logo-clipart.png"  />
+              <img src="/maruti-suzuki-nexa.png"  />
             </a>
             {/* <SearchBar /> */}
             <button
