@@ -57,7 +57,6 @@ const CalendarWidget = ({ open, handleClose }) => {
                             >
                                 <img
                                     src="3.png"
-                                    style={{ height: "40px" }}
                                     alt="Image of Classroom Bengaluru"
                                 />
                             </div>

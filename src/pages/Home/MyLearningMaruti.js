@@ -20,7 +20,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Mcard from "../../components/Mcard";
 
 const MyLearningMaruti = (props) => {
-    
+
     const isPratham = (props && props.pratham) ? props.pratham : false
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
@@ -105,7 +105,7 @@ const MyLearningMaruti = (props) => {
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1
+            items: 2
         }
     };
 
@@ -130,23 +130,23 @@ const MyLearningMaruti = (props) => {
                     {!isEmpty(response?.data) ? ((response?.data.length < 2) ? (
                         <div className="container ms_recomcarousel">
                             <div className="row">
-                            {mappedData.map((val, ind) => {
-                                var enrollmentData = response.included.filter(
-                                    (x) => x.id === val?.relationships?.enrollment?.data?.id
-                                );
-                                var enrollProgress = (enrollmentData && enrollmentData[0]) ? enrollmentData[0]?.attributes?.progressPercent : 0
-if(ind>3){
-    return ''
-}
-if(val.id=='course:9286000'){
-    return ''
-}
-                                return (
-                                    <div className="col-3"><Mcard  key={ind} loid={val.id} imageUrl={val.attributes?.imageUrl} title={val.attributes.localizedMetadata[0].name} progressBar={enrollProgress} time={val?.attributes?.duration} price={val.attributes.price} type={val.attributes.loType} isPratham={isPratham} ></Mcard></div>
-                                );
-                            })}
+                                {mappedData.map((val, ind) => {
+                                    var enrollmentData = response.included.filter(
+                                        (x) => x.id === val?.relationships?.enrollment?.data?.id
+                                    );
+                                    var enrollProgress = (enrollmentData && enrollmentData[0]) ? enrollmentData[0]?.attributes?.progressPercent : 0
+                                    if (ind > 3) {
+                                        return ''
+                                    }
+                                    if (val.id == 'course:9286000') {
+                                        return ''
+                                    }
+                                    return (
+                                        <div className="col-3"><Mcard key={ind} loid={val.id} imageUrl={val.attributes?.imageUrl} title={val.attributes.localizedMetadata[0].name} progressBar={enrollProgress} time={val?.attributes?.duration} price={val.attributes.price} type={val.attributes.loType} isPratham={isPratham} ></Mcard></div>
+                                    );
+                                })}
                             </div>
-                            
+
                         </div>
                     ) : (<div className={`ms_recomcarousel`}>
                         {!isEmpty(response?.data) ? (
@@ -172,7 +172,7 @@ if(val.id=='course:9286000'){
                                         (x) => x.id === val?.relationships?.enrollment?.data?.id
                                     );
                                     var enrollProgress = (enrollmentData && enrollmentData[0]) ? enrollmentData[0]?.attributes?.progressPercent : 0
-                                    if(val.id=='course:9286000'){
+                                    if (val.id == 'course:9286000') {
                                         return false
                                     }
                                     return (

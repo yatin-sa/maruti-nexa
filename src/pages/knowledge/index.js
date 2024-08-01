@@ -162,28 +162,28 @@ const CourseOverview = () => {
               </div>
             </div> */}
             <div className="col-12">
-<div className="knowledge_content">
-<div className="row">
-              {
-                (jobAids && jobAids.length > 0) ? (
-                  jobAids.map(function (item, key) {
+              <div className="knowledge_content">
+                <div className="row">
+                  {
+                    (jobAids && jobAids.length > 0) ? (
+                      jobAids.map(function (item, key) {
 
-                    return (<div className="col-3">
-                      <div className="card job_card shadow-lg ">
-                        <div className="row">
-                          <div className="col-3"><p><i className="fa-solid fa-file-pdf"></i></p></div>
-                          <div className="col-9"><h2>{item.attributes.localizedMetadata[0].name}</h2></div>
-                        </div>
+                        return (<div className="col-6 col-md-4 col-xl-3">
+                          <div className="card job_card shadow-lg ">
+                            <div className="row">
+                              <div className="col-3"><p><i className="fa-solid fa-file-pdf"></i></p></div>
+                              <div className="col-9"><h2>{item.attributes.localizedMetadata[0].name}</h2></div>
+                            </div>
 
 
-                      </div>
-                    </div>)
-                  })
-                ) : ''
-              }
+                          </div>
+                        </div>)
+                      })
+                    ) : ''
+                  }
 
-            </div>
-</div>
+                </div>
+              </div>
             </div>
             <div className="col-1"></div>
             <div className="col-3">
