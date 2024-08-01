@@ -1,46 +1,182 @@
-.header_center_nav li a img{
-    width: 25px;
-height: 25px;
+.header_center_nav li a img {
+  width: 25px;
+  height: 25px;
 }
 .header_center_nav li a {
-   margin: 0 25px;
+  margin: 0 25px;
 }
 .header_center_nav li a.active {
-    border-bottom: 2px solid #00FFF5;
- }
- .header_right_nav li a{
-    margin: 0 15px;
- }
- .header_right_nav{
-    margin-top:10px;
- }
- .header_right_nav_avtar{
-    width: 35px;
-    height: 35px;
- }
- .header_right_nav_avtar_a{
-    padding-top: 5px !important;
- }
- .header_right_nav .dropdown-toggle::after{
-    display: none;
- }
- .header_right_nav .dropdown-menu[data-bs-popper] {
-    left: -80px !important;
+  border-bottom: 2px solid #00fff5;
 }
-.header_new{
-   background: #0E1117;
+.header_right_nav li a {
+  margin: 0 15px;
 }
-.navbar-brand img{
-   height:40px
+.header_right_nav {
+  margin-top: 10px;
+}
+.header_right_nav_avtar {
+  width: 35px;
+  height: 35px;
+}
+.header_right_nav_avtar_a {
+  padding-top: 5px !important;
+}
+.header_right_nav .dropdown-toggle::after {
+  display: none;
+}
+.header_right_nav .dropdown-menu[data-bs-popper] {
+  left: -80px !important;
+}
+.header_new {
+  background: #0e1117;
+}
+.navbar-brand img {
+  height: 40px;
+}
+.collapse .collapse-wrapper {
+  width: 100%;
+  display: flex;
+}
+.menuTitle
+{
+  display: none;
+}
+@media (min-width: 320px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 }
 
+/* For Tablet View */
 
-@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
-@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
-@media (max-width:600px)  { 
+@media screen and (min-device-width: 768px) and (max-device-width: 1023px) and (orientation: portrait) {
+  .header_new {
+    background: #000d29;
+  }
+  /* smartphones, Android phones, landscape iPhone */
+  .collapse .collapse-wrapper {
+    width: 100%;
+    background-color: #000d29;
+    display: block;
+  }
+  .navbar-brand img {
+    height: 20px;
+  }
+  .navbar .navbar-toggler {
+    background-color: #fff;
+    width: 60px;
+    padding: 9px 0 0 0;
+    color: #02fbf1;
+  }
+  .navbar .navbar-toggler .navbar-toggler-icon {
+    color: #02fbf1;
+  }
 
-   .navbar-brand img{
-      height: 20px;
-   }
-   
+  .navbar .header_center_nav li a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+  }
+
+  .navbar .header_right_nav li a {
+    padding-left: 10px;
+  }
+  .navbar .header_right_nav li a.header_right_nav_avtar_a {
+    padding-left: 5px;
+  }
+  .navbar .header_center_nav li .menuTitle
+  {
+    display: block;
+    padding-left: 1.5rem;
+    color: white;
+  }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 485px) and (orientation: portrait) {
+  /* smartphones, Android phones, landscape iPhone */
+
+  .header_new {
+    background: #000d29;
+  }
+  .collapse .collapse-wrapper {
+    width: 100%;
+    background-color: #000d29;
+    display: block;
+  }
+  .navbar-brand img {
+    height: 20px;
+  }
+  
+  .navbar .navbar-toggler{
+    background-color: #fff;
+    width: 60px;
+    padding: 9px 0 0 0;
+    color: #02fbf1;
+  }
+  .navbar .navbar-toggler .navbar-toggler-icon {
+    color: #02fbf1;
+  }
+
+  .navbar .header_center_nav li a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+  }
+
+  .navbar .header_right_nav li a {
+    padding-left: 10px;
+  }
+  .navbar .header_right_nav li a.header_right_nav_avtar_a {
+    padding-left: 5px;
+  }
+  .navbar .header_center_nav li .menuTitle
+  {
+    display: block;
+    padding-left: 1.5rem;
+    color: white;
+  }
+}
+
+/* For Mobile Landscape View */
+@media screen and (min-device-width: 320px) and (max-device-width: 960px) and (orientation: landscape) {
+  /* smartphones, Android phones, landscape iPhone */
+
+  .header_new {
+    background: #000d29;
+  }
+  .collapse .collapse-wrapper {
+    width: 100%;
+    background-color: #000d29;
+    display: block;
+  }
+  .navbar-brand img {
+    height: 20px;
+  }
+  .navbar .navbar-toggler {
+    background-color: #fff;
+    width: 60px;
+    padding: 9px 0 0 0;
+    color: #02fbf1;
+  }
+  .navbar .navbar-toggler .navbar-toggler-icon {
+    color: #02fbf1;
+  }
+  
+  .navbar .header_center_nav li a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+  }
+
+  .navbar .header_right_nav li a {
+    padding-left: 10px;
+  }
+  .navbar .header_right_nav li a.header_right_nav_avtar_a {
+    padding-left: 5px;
+  }
+  .navbar .header_center_nav li .menuTitle
+  {
+    display: block;
+    padding-left: 1.5rem;
+    color: white;
+  }
 }

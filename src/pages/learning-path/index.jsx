@@ -1065,7 +1065,7 @@ const LearningOverview = () => {
           <div className="ms_over_wrap">
             <div className="container">
               <div className="row">
-                <div className="col-md-4 col-xs-12">
+                <div className="col-lg-4 col-md-12 col-xs-12">
                   <div className="ms_overview_data">
                   <div className="row">
                     {/* <div className="col-4">
@@ -1164,7 +1164,7 @@ const LearningOverview = () => {
 
 
                 </div>
-                <div className="col-md-8 col-xs-12">
+                <div className="col-lg-8 col-md-12 col-xs-12 mt-mob ">
                   <div className="ms_module_wrap">
                   <h3>Learning Plan</h3>
 
@@ -1959,7 +1959,7 @@ const LearningOverview = () => {
               {/* </Grid>
             </Grid>
           </div> */}
-          <div className="ms_recomm">
+          <div className="ms_recomm ms-recom-custom">
             <div className="container">
               <RecommendedMaruti lo={true} type="peer_group" />
             </div>
