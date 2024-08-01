@@ -577,7 +577,7 @@ const CourseOverview = () => {
   return (
     <>
       {src === "" ? (
-        <div>
+        <div className="co_overview_page">
           <div className="ms_lo_banner">
             <div className="container">
               <div className="row">
@@ -598,7 +598,7 @@ const CourseOverview = () => {
           <div className="ms_over_wrap">
             <div className="container">
               <div className="row">
-                <div className="col-4">
+                <div className="col-lg-4 col-md-12 col-xs-12">
                   <div className="ms_overview_data">
                   <div className="row">
                     {/* <div className="col-4">
@@ -695,7 +695,7 @@ const CourseOverview = () => {
                     </>
                   )}
                 </div>
-                <div className="col-8">
+                <div className="col-lg-8 col-md-12 col-xs-12">
                   <div className="ms_module_wrap">
                   <h3>Modules</h3>
                   {!isNil(resource) &&

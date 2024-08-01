@@ -14,9 +14,9 @@
   margin-bottom: 5px;
   /* text-shadow: 2px 2px #0066ff; */
 }
-.jumbo-container img{
+.jumbo-container img {
   max-height: 180px;
-  }
+}
 body {
   background-color: #f5f7fa !important;
 }
@@ -152,7 +152,6 @@ body {
 }
 
 .accordian_title a {
-
   font-size: 15px;
   font-family: "Oxygen", sans-serif;
   color: #000;
@@ -282,12 +281,65 @@ body {
   color: #fff !important;
   border: 1px solid #2d3494 !important;
 }
-.lp_course_unlock{
+.lp_course_unlock {
   background: red !important;
 }
-.lp_course_lock{
+.lp_course_lock {
   opacity: 0.2;
   background-image: url("../../../public/MarutiSuzuki_Assets/Group 10915.png");
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.card {
+  margin: 0 auto;
+}
+
+.ms_over_wrap .container .lo_sec_btn {
+  width: 120px;
+}
+.ms_over_wrap .container .ms_maincta {
+  width: 145px;
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1191px) and (orientation: landscape) {
+  .ms_over_wrap .container {
+    max-width: 95%;
+  }
+
+  .ms_over_wrap .container .lo_sec_btn {
+    width: 120px;
+  }
+  .ms_over_wrap .container .ms_maincta {
+    width: 145px;
+  }
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1023px) and (orientation: portrait) {
+  .mt-mob {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-device-width: 485px) and (orientation: portrait) {
+  .ms-recom-custom.ms_recomm {
+    padding: 35px 15px;
+    background-color: #1a1a1a;
+    background-image: none;
+  }
+  .mt-mob {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 960px) and (orientation: landscape) {
+  .ms-recom-custom.ms_recomm {
+    margin-top: 20px;
+  }
+  .ms_over_wrap .container .mt-mob {
+    margin-top: 20px;
+  }
+  .ms_over_wrap .container .lo_sec_btn {
+    width: 120px;
+  }
+  .ms_over_wrap .container .ms_maincta {
+    width: 145px;
+  }
 }

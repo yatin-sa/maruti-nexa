@@ -110,35 +110,43 @@ const HeaderLayout = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon fas fa-bars"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent" >
+              <div className="collapse-wrapper">
               <div className="mx-auto">
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 header_center_nav">
                   <li className="nav-item">
                     <a title="Homepage" className={(location.pathname.includes('courses')) ? "nav-link  active" : "nav-link "} href="/courses">
                       <img src={(location.pathname.includes('courses')) ? "/MarutiSuzuki_Assets/dashboard_icon_focus.png" : "/MarutiSuzuki_Assets/dashboard_icon.png"} />
-                    </a>
+                    <span className="menuTitle">Homepage</span></a>
                   </li>
                   <li className="nav-item">
                     <a title="Prarambh Learning Path" className={(location.pathname.includes('/learning-path/learningProgram:124089')) ? "nav-link  active" : "nav-link "} href="/learning-path/learningProgram:124089">
                       <img src={(location.pathname.includes('/learning-path/learningProgram:124089')) ? "/MarutiSuzuki_Assets/learningpath_icon_focus.png" : "/MarutiSuzuki_Assets/learningpath_icon.png"} />
-                    </a>
+                    <span className="menuTitle">Prarambh Learning Path</span>
+                     </a>
                   </li>
                   <li className="nav-item">
                     <a title="Leaderboard" className={(location.pathname.includes('leaderboard')) ? "nav-link  active" : "nav-link "} href="/leaderboard">
                       <img src={(location.pathname.includes('leaderboard')) ? "/MarutiSuzuki_Assets/leaderboard_icon_focus.png" : "/MarutiSuzuki_Assets/leaderboard_icon.png"} />
+                    <span className="menuTitle">Leaderboard</span>
                     </a>
+                    
                   </li>
                   <li className="nav-item">
                     <a title="Knowledge Hub" className={(location.pathname.includes('knowledge')) ? "nav-link  active" : "nav-link "} href="/knowledge">
                       <img src={(location.pathname.includes('knowledge')) ? "/MarutiSuzuki_Assets/knowledgehub_icon_focus.png" : "/MarutiSuzuki_Assets/knowledgehub_icon.png"} />
+                     <span className="menuTitle">Knowledge Hub</span>
                     </a>
+                   
                   </li>
                   <li className="nav-item">
                     <a title="Social Learning" className="nav-link " href="/Social">
                       <img src="/MarutiSuzuki_Assets/quize_icon.png" />
+                    <span className="menuTitle">Social Learning</span>
                     </a>
+                    
                   </li>
                 </ul>
               </div>
@@ -175,6 +183,7 @@ const HeaderLayout = () => {
                   </ul>
                 </li>
               </ul>
+              </div>
             </div>
           </div>
         </nav>

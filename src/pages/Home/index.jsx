@@ -313,6 +313,9 @@ const Home = () => {
       }
     
     }
+
+    // For development. remove once development completed
+    setPratham(true);
   }, [loRes]);
 
   
