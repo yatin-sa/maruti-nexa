@@ -96,3 +96,63 @@ position: absolute;
     right: 12px;
     cursor: pointer;
 }
+
+
+
+
+@media (max-width:820px) {
+    .ms_quiz_btn {
+      padding: 11px 8px;
+      border-radius: 7px;
+      font: normal normal normal 12px/10px Roboto;
+    }
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  }
+  
+  @media (min-width:480px) {
+    /* smartphones, Android phones, landscape iPhone */
+  }
+  
+  @media (max-width:600px) {
+
+   
+    
+    .maruti_card_caption {
+        padding: 6px 9px;
+        opacity: 1;
+    }
+    
+    .maruti_card_caption_left h3 {
+        font: normal normal 600 12px/12px Roboto;
+        text-shadow: 1px 1px #000000;
+    }
+    
+    .maruti_card_caption_left h4 {
+        font: normal normal 400 10px/10px Roboto;
+        margin-bottom: 2px;
+        text-shadow: 1px 1px #000000;
+    }
+    
+    .maruti_card_caption_left h5 {
+        font: normal normal 400 8px/16px Roboto;
+        margin-bottom: 5px;
+        text-shadow: 1px 1px #000000;
+    }
+    .maruti_card_caption_left {
+        width: 80%;
+        display: inline-block;
+    }
+    
+    .maruti_card_caption_right {
+        width: 15%;
+        display: inline-block;
+    }
+    .maruti_card_caption_right img{
+        width: 18px;
+    height: 12px;
+        right: 6px;
+    }
+    
+    
+
+  }

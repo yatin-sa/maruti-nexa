@@ -1,5 +1,5 @@
 .knowldege_banner {
-    background: url("../../../public/MarutiSuzuki_Assets/banner_secondary.JPG");
+    background: url("../../../public/MarutiSuzuki_Assets/banner_secondary.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 200px 0;
@@ -9,7 +9,7 @@
 
 .knowldege_banner h1 {
     text-align: left;
-    font: normal normal medium 50px/70px Roboto;
+    font: normal normal 500 50px/70px Roboto;
     letter-spacing: 0px;
     color: #FFFFFF;
     margin-bottom: 20px;
@@ -93,7 +93,7 @@
 }
 .knowledge_content .card{
     padding: 20px 15px;
-    background: #2D3394 0% 0% no-repeat padding-box;
+    background: #26344C 0% 0% no-repeat padding-box;
 }
 .knowledge_content .card i{
     color: #fff;
@@ -106,4 +106,69 @@
 letter-spacing: 0px;
 color: #fff;
 margin-bottom: 0;
+display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:600px) and (max-width:880px) { 
+    .knowldege_banner {
+        background-size: cover;
+        padding: 150px 0;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .job_card p i {
+        font-size: 30px;
+    }
+    
+    .knowldege_banner h1 {
+        font: normal normal 500 40px/60px Roboto;
+        margin-bottom: 15px;
+    }
+    .knowldege_banner p {
+        text-align: left;
+        font: normal normal normal 25px/30px Roboto;
+    }
+    .knowledge_content .card{
+        padding: 15px 12px;
+    }
+    .knowledge_content .card  h2{
+        font: normal normal normal 15px/15px Roboto;
+    }
+ }
+@media (max-width:600px)  { 
+    .knowldege_banner {
+        padding: 100px 0;
+        height: 200px;
+        margin-bottom: 40px;
+    }
+    
+    .knowldege_banner h1 {
+        font: normal normal 500 25px/35px Roboto;
+        margin-bottom: 10px;
+    }
+    .knowldege_banner p {
+        font: normal normal normal 15px/17px Roboto;
+    }
+    .job_card p i {
+        font-size: 20px;
+    }
+    .job_card {
+        margin-bottom: 10px;
+    }
+    .knowledge_content .card{
+        padding: 10px 8px;
+    }
+    .knowledge_content .card  h2{
+        font: normal normal normal 12px/12px Roboto;
+    }
+    
+
 }

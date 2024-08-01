@@ -522,7 +522,7 @@ const Home = () => {
         <div className="ms_social_posts">
           <div className="container">
             <div className="row">
-              <div className="col-md-7 col-xs-12">
+              <div className="col-12 col-xl-7">
               <h2>DEALER COMMUNITY <a href="/Social" className="float-end">View All <img src="MarutiSuzuki_Assets/arrow_right_blue.png" /></a></h2>
               {
               (socialRes && socialRes?.data && socialRes?.data.length > 0) ? <div className="row">
@@ -560,7 +560,7 @@ const Home = () => {
               </div> : ''
             }
               </div>
-              <div className="col-md-5 col-xs-12">
+              <div className="col-12 col-xl-5">
               <h2>CALENDAR</h2>
               <CalendarWidget />
               </div>
