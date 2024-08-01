@@ -5,6 +5,10 @@
   background-size: cover;
   /* margin-bottom:20px; */
 }
+.lodisablePage{
+  opacity: 0.2;
+  pointer-events: none;
+}
 
 .jumbo-container img {
   max-height: 180px;
