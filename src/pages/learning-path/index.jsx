@@ -59,7 +59,7 @@ const LearningOverview = () => {
   const [fileClass, setFileClass] = useState("");
   const [responseLP, setResponseLP] = useState([]);
   const [courseSurvey, setcourseSurvey] = useState([]);
-
+  const [disablePageData, setDisablePageData] = useState([]);
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
   const handleTabChange = (e, tabIndex) => {
@@ -92,7 +92,7 @@ const LearningOverview = () => {
   const [disableBtn, setDisableBtn] = useState(false);
   const [selectedOption, setSelectedOption] = useState("team");
   const [enrollmentLPList, setEnrollmentLPList] = useState([]);
-  const [disablePage, setDisablePage] = useState(false);
+  
   const [qty, setQty] = useState("1");
 
   const [userData, setUserData] = useState({
@@ -248,72 +248,72 @@ const LearningOverview = () => {
   // console.log("courselist", CatalogCourse);
   // !isEmpty(CatalogCourse) &&
   //   console.log("includes", CatalogCourse.includes(id));
-
+  // handleContinueClick("", isEmpty(enrollRes?.included), enrollRes?.data?.attributes?.price)
   const handleContinueClick = async (
     moduleId,
     courseid,
     enroll = false,
     price
   ) => {
-    console.log("teeee", courseid);
-    console.log("player ", id, moduleId);
+    console.log('enroll yatin ',moduleId,
+    courseid,
+    enroll,
+    price,
+  enrollRes?.included)
+    if (
+      enroll === false &&
+      price &&
+      (userdataRes?.data?.attributes?.fields?.Subscription !== "Yes" ||
+        !CatalogCourse.includes(id))
+    ) {
+      navigate(`/license/${id}`);
+    } else if (enroll === false) {
+      console.log("new enroll");
+      await userenrollmentReq({
+        axiosInstance: axiosPrivate,
+        method: "POST",
+        endpoint: `/enrollments`,
+        requestConfig: {
+          params: {
+            loId: id,
+            loInstanceId:
+              enrollRes?.data?.relationships?.instances?.data[0]?.id,
+          },
+        },
+      });
+      enrollmentReq({
+        axiosInstance: axiosPrivate,
+        method: "GET",
+        endpoint: `/learningObjects/${id}`,
+        requestConfig: {
+          params: {
+            include: "enrollment",
+          },
+        },
+      });
+    } else {
+      let playerUrl = "";
+      if (courseSurvey.includes(courseid)) {
+        await surveyCourseReq({
+          axiosInstance: axiosPrivate,
+          method: "GET",
+          endpoint: `/learningObjects/${courseid}`,
+          requestConfig: {
+            params: {
+              include: "instances.loResources.resources",
+            },
+          },
+        });
+        //window.open("https://www.adobe.com", "_blank");
+      } else {
+        if (moduleId === "")
+          playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}`;
+        else
+          playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}&module_id=${moduleId}`;
+      }
 
-    var playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}`;
-    setSrc(playerUrl);
-    // if (
-    //   enroll === false &&
-    //   price &&
-    //   (userdataRes?.data?.attributes?.fields?.Subscription !== "Yes" ||
-    //     !CatalogCourse.includes(id))
-    // ) {
-    //   navigate(`/license/${id}`);
-    // } else if (enroll === false) {
-    //   console.log("new enroll");
-    //   await userenrollmentReq({
-    //     axiosInstance: axiosPrivate,
-    //     method: "POST",
-    //     endpoint: `/enrollments`,
-    //     requestConfig: {
-    //       params: {
-    //         loId: id,
-    //         loInstanceId:
-    //           enrollRes?.data?.relationships?.instances?.data[0]?.id,
-    //       },
-    //     },
-    //   });
-    //   enrollmentReq({
-    //     axiosInstance: axiosPrivate,
-    //     method: "GET",
-    //     endpoint: `/learningObjects/${id}`,
-    //     requestConfig: {
-    //       params: {
-    //         include: "enrollment",
-    //       },
-    //     },
-    //   });
-    // } else {
-    //   let playerUrl = "";
-    //   if (courseSurvey.includes(courseid)) {
-    //     await surveyCourseReq({
-    //       axiosInstance: axiosPrivate,
-    //       method: "GET",
-    //       endpoint: `/learningObjects/${courseid}`,
-    //       requestConfig: {
-    //         params: {
-    //           include: "instances.loResources.resources",
-    //         },
-    //       },
-    //     });
-    //     //window.open("https://www.adobe.com", "_blank");
-    //   } else {
-    //     if (moduleId === "")
-    //       playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}`;
-    //     else
-    //       playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}&module_id=${moduleId}`;
-    //   }
-
-    //   setSrc(playerUrl);
-    // }
+      setSrc(playerUrl);
+    }
   };
 
   const getCart = () => {
@@ -338,28 +338,7 @@ const LearningOverview = () => {
       });
   };
 
-  const checkLOAttendance = () => {
-    var cart_id = localStorage.getItem("cart_id");
-    let config = {
-      headers: {
-        header1: "test",
-      },
-    };
-    var instance_id =
-    Loinstance && Loinstance[0] && Loinstance[0].id ? Loinstance[0].id : "";
-    var formdata = new FormData();
-    formdata.append("lo_id", id);
-    formdata.append("instance_id", instance_id);
-    formdata.append("email", userdataRes?.data?.attributes?.email);
-    axios
-      .post("https://viku.space/maruti/getinstructorattendance.php", formdata, config)
-      .then((response) => {
-        console.log('viku  ',response)
-        if (response.data && response.data.success == true) {
-          setDisablePage(true)
-        }
-      });
-  };
+  
   const addToCart = () => {
     var cart_id = localStorage.getItem("cart_id");
     let config = {
@@ -368,7 +347,7 @@ const LearningOverview = () => {
       },
     };
     var instance_id =
-      Loinstance && Loinstance[0] && Loinstance[0].id ? Loinstance[0].id : "";
+      Loinstance && Loinstance[0] && Loinstance[0].relationships ? Loinstance[0].relationships?.instances?.data[0]?.id : "";
     var formdata = new FormData();
     formdata.append("course_id", response?.data?.id);
     formdata.append("price", response?.data?.attributes.price);
@@ -400,6 +379,75 @@ const LearningOverview = () => {
       });
   };
 
+
+
+  const checkLOAttendance = () => {
+    var cart_id = localStorage.getItem("cart_id");
+    let config = {
+      headers: {
+        header1: "test",
+      },
+    };
+    var instance_id =
+    Loinstance && Loinstance[0] && Loinstance[0].id ? Loinstance[0].id : "";
+    var formdata = new FormData();
+    formdata.append("lo_id", id);
+    formdata.append("instance_id", instance_id);
+    formdata.append("email", userdataRes?.data?.attributes?.email);
+    axios
+      .post("https://viku.space/maruti/getinstructorattendance.php", formdata, config)
+      .then((response) => {
+        console.log('viku  ',response)
+        if (response.data && response.data.success == true) {
+          setDisablePageData(response.data.data)
+        }
+      });
+  };
+
+  useEffect(() => {
+   
+
+    resource.map(function(item,key){
+    //   var preTestTag =
+    //   isFormQuiztag &&
+    //     isFormQuiztag.length > 0 &&
+    //     isFormQuiztag.includes("pretest")
+    //     ? true
+    //     : false;
+    // var postTestTag =
+    //   isFormQuiztag &&
+    //     isFormQuiztag.length > 0 &&
+    //     isFormQuiztag.includes("posttest")
+    //     ? true
+    //     : false;
+    //     if(courseid==1){
+    //       preTestTag = true
+    //     }
+    //     if(courseid==4){
+    //       postTestTag = true
+    //     }
+    // var pageTypeTest = (preTestTag) ? 'pretest' : 'posttest'
+    // if(preTestTag){
+    //   preTestTag = (disablePageData && disablePageData?.pretest) ? true : false
+    // }
+    // if(postTestTag){
+    //   postTestTag = (disablePageData && disablePageData?.posttest) ? true : false
+    // }
+   
+// console.log('posttest mod' ,postTestTag,courseid)
+//     var finalprepostTag = (!postTestTag) ? true : false
+    })
+
+  }, [resource]);
+
+
+  useEffect(() => {
+    if (Loinstance && Loinstance.length > 0) {
+     
+      checkLOAttendance()
+    }
+
+  }, [Loinstance]);
 
   console.log("uhuhuuh ", Loinstance);
   useEffect(async () => {
@@ -1014,13 +1062,6 @@ const LearningOverview = () => {
 
 
   useEffect(() => {
-    if (response && Loinstance && Loinstance.length > 0) {
-      
-      checkLOAttendance()
-    }
-
-  }, [Loinstance]);
-  useEffect(() => {
     if (!isEmpty(surveyRes)) {
       console.log("survey", surveyRes);
       const surveyCourse = surveyRes.data.map((ele) => {
@@ -1047,7 +1088,7 @@ const LearningOverview = () => {
   return (
     <>
       {src === "" ? (
-        <div className={(disablePage) ? 'lodisablePage' : ''}>
+        <div>
           <div className="ms_lo_banner">
             <div className="container">
               <div className="row">
@@ -1137,7 +1178,7 @@ const LearningOverview = () => {
                         enrollRes?.data?.attributes?.price && !ExistSubs ? (
                         <button type="button" disabled className="ms_maincta">{getLabel(enrollRes)}</button>
                       ) : (
-                        <button type="button" onClick={(e) => handleContinueClick("", isEmpty(enrollRes?.included), enrollRes?.data?.attributes?.price)} disabled={disableBtn} className="ms_maincta">{getLabel(enrollRes)}</button>
+                        <button type="button" onClick={(e) => handleContinueClick("",id, ((enrollRes?.included) ? true : false), enrollRes?.data?.attributes?.price)} disabled={disableBtn} className="ms_maincta">{getLabel(enrollRes)}</button>
                       )}
                       {enrollRes &&
                         enrollRes.included &&
@@ -2028,8 +2069,8 @@ const LearningOverview = () => {
             )} */}
         </div>
       ) : (
-        <div style={{ height: "100vh", width: "100%" }}>
-          <iframe src={src} height="100%" width="100%"></iframe>
+        <div style={{ height: "60vh", width: "100%" }}>
+          <iframe src={src} className="ms_course_frame" height="85%" width="100%"></iframe>
         </div>
       )}
     </>

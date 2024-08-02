@@ -92,8 +92,8 @@ const CourseOverview = () => {
   const [cartItems, setCartItems] = useState([]);
   const [disableBtn, setDisableBtn] = useState(false);
   const [selectedOption, setSelectedOption] = useState("team");
-  const [disablePage, setDisablePage] = useState(false);
-
+  
+  
   const [qty, setQty] = useState("1");
   const [userData, setUserData] = useState({
     recipient_email: "",
@@ -280,29 +280,6 @@ const CourseOverview = () => {
       });
   };
 
-
-  const checkLOAttendance = () => {
-    var cart_id = localStorage.getItem("cart_id");
-    let config = {
-      headers: {
-        header1: "test",
-      },
-    };
-    var instance_id =
-    Loinstance && Loinstance[0] && Loinstance[0].id ? Loinstance[0].id : "";
-    var formdata = new FormData();
-    formdata.append("lo_id", id);
-    formdata.append("instance_id", instance_id);
-    formdata.append("email", userdataRes?.data?.attributes?.email);
-    axios
-      .post("https://viku.space/maruti/getinstructorattendance.php", formdata, config)
-      .then((response) => {
-        console.log('viku  ',response)
-        if (response.data && response.data.success == true) {
-          setDisablePage(true)
-        }
-      });
-  };
 
   const addToCart = () => {
     var cart_id = localStorage.getItem("cart_id");
@@ -528,7 +505,7 @@ const CourseOverview = () => {
           setDisableBtn(true);
         }
       }
-      checkLOAttendance()
+     
     }
 
   }, [Loinstance]);
@@ -583,6 +560,12 @@ const CourseOverview = () => {
     }
   }, [id, adminAccessToken]);
 
+
+  
+
+
+  
+
   // useEffect(() => {
   //   if (!isNil(adminAccessToken)) {
   //     getDataById();
@@ -604,7 +587,7 @@ const CourseOverview = () => {
   return (
     <>
       {src === "" ? (
-        <div className={(disablePage) ? 'lodisablePage' : ''}>
+        <div>
         <div className="co_overview_page">
           <div className="ms_lo_banner">
             <div className="container">
