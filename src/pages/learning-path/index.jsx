@@ -257,60 +257,63 @@ const LearningOverview = () => {
   ) => {
     console.log("teeee", courseid);
     console.log("player ", id, moduleId);
-    if (
-      enroll === false &&
-      price &&
-      (userdataRes?.data?.attributes?.fields?.Subscription !== "Yes" ||
-        !CatalogCourse.includes(id))
-    ) {
-      navigate(`/license/${id}`);
-    } else if (enroll === false) {
-      console.log("new enroll");
-      await userenrollmentReq({
-        axiosInstance: axiosPrivate,
-        method: "POST",
-        endpoint: `/enrollments`,
-        requestConfig: {
-          params: {
-            loId: id,
-            loInstanceId:
-              enrollRes?.data?.relationships?.instances?.data[0]?.id,
-          },
-        },
-      });
-      enrollmentReq({
-        axiosInstance: axiosPrivate,
-        method: "GET",
-        endpoint: `/learningObjects/${id}`,
-        requestConfig: {
-          params: {
-            include: "enrollment",
-          },
-        },
-      });
-    } else {
-      let playerUrl = "";
-      if (courseSurvey.includes(courseid)) {
-        await surveyCourseReq({
-          axiosInstance: axiosPrivate,
-          method: "GET",
-          endpoint: `/learningObjects/${courseid}`,
-          requestConfig: {
-            params: {
-              include: "instances.loResources.resources",
-            },
-          },
-        });
-        //window.open("https://www.adobe.com", "_blank");
-      } else {
-        if (moduleId === "")
-          playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}`;
-        else
-          playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}&module_id=${moduleId}`;
-      }
 
-      setSrc(playerUrl);
-    }
+    var playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}`;
+    setSrc(playerUrl);
+    // if (
+    //   enroll === false &&
+    //   price &&
+    //   (userdataRes?.data?.attributes?.fields?.Subscription !== "Yes" ||
+    //     !CatalogCourse.includes(id))
+    // ) {
+    //   navigate(`/license/${id}`);
+    // } else if (enroll === false) {
+    //   console.log("new enroll");
+    //   await userenrollmentReq({
+    //     axiosInstance: axiosPrivate,
+    //     method: "POST",
+    //     endpoint: `/enrollments`,
+    //     requestConfig: {
+    //       params: {
+    //         loId: id,
+    //         loInstanceId:
+    //           enrollRes?.data?.relationships?.instances?.data[0]?.id,
+    //       },
+    //     },
+    //   });
+    //   enrollmentReq({
+    //     axiosInstance: axiosPrivate,
+    //     method: "GET",
+    //     endpoint: `/learningObjects/${id}`,
+    //     requestConfig: {
+    //       params: {
+    //         include: "enrollment",
+    //       },
+    //     },
+    //   });
+    // } else {
+    //   let playerUrl = "";
+    //   if (courseSurvey.includes(courseid)) {
+    //     await surveyCourseReq({
+    //       axiosInstance: axiosPrivate,
+    //       method: "GET",
+    //       endpoint: `/learningObjects/${courseid}`,
+    //       requestConfig: {
+    //         params: {
+    //           include: "instances.loResources.resources",
+    //         },
+    //       },
+    //     });
+    //     //window.open("https://www.adobe.com", "_blank");
+    //   } else {
+    //     if (moduleId === "")
+    //       playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}`;
+    //     else
+    //       playerUrl = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${courseid}&access_token=${accessToken}&module_id=${moduleId}`;
+    //   }
+
+    //   setSrc(playerUrl);
+    // }
   };
 
   const getCart = () => {
