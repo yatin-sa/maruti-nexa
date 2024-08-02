@@ -11,9 +11,7 @@
 .header_right_nav li a {
   margin: 0 15px;
 }
-.header_right_nav {
-  margin-top: 10px;
-}
+
 .header_right_nav_avtar {
   width: 35px;
   height: 35px;
@@ -31,15 +29,20 @@
   background: #0e1117;
 }
 .navbar-brand img {
-  height: 40px;
+  width: 160px;
+  height: auto;
 }
 .collapse .collapse-wrapper {
   width: 100%;
   display: flex;
+  padding-top: 10px;
 }
 .menuTitle
 {
   display: none;
+}
+.navbar{
+  padding-top: 0;
 }
 @media (min-width: 320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
@@ -52,20 +55,28 @@
     background: #000d29;
   }
   /* smartphones, Android phones, landscape iPhone */
+  .navbar{
+    background-color:#000d29;
+  }
   .collapse .collapse-wrapper {
     width: 100%;
     background-color: #000d29;
     display: block;
   }
   .navbar-brand img {
-    height: 20px;
+    width: 100px;
+    height: auto
   }
-  .navbar .navbar-toggler {
-    background-color: #fff;
+ 
+  .navbar .navbar-toggler{
+    background-color: #000d29;
     width: 60px;
     padding: 9px 0 0 0;
-    color: #02fbf1;
-  }
+    color: #fff;
+    border: 1.5px solid;
+  } 
+
+
   .navbar .navbar-toggler .navbar-toggler-icon {
     color: #02fbf1;
   }
@@ -79,6 +90,13 @@
   .navbar .header_right_nav li a {
     padding-left: 10px;
   }
+
+  .navbar .header_right_nav li a
+  {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+  }
   .navbar .header_right_nav li a.header_right_nav_avtar_a {
     padding-left: 5px;
   }
@@ -87,6 +105,42 @@
     display: block;
     padding-left: 1.5rem;
     color: white;
+  }
+  .navbar .header_right_nav li .menuTitle
+  {
+    display: block;
+    padding-left: 1.5rem;
+    color: white;
+  }
+  .cal_w
+  {
+    display: block;
+  }
+  .cal_w .react-calendar .react-calendar__navigation
+  {
+    margin-bottom: 0;
+  }
+  .cal_w .react-calendar
+  {
+    width: 100%;
+  }
+   .ms_social_posts .css-1xu1mzw-MuiGrid-root>.MuiGrid-item{
+    padding-left: 0;
+  } 
+  .ms_social_posts .css-1xu1mzw-MuiGrid-root
+  {
+    width: 100%;
+    margin-left: 0;
+  }
+  .calender_wrap{
+    margin-left: 0;
+  }
+  .react-calendar__month-view__weekdays__weekday
+  {
+    padding: 0.1em;
+  }
+  .calender_wrap{
+    height: auto;
   }
 }
 
@@ -97,26 +151,48 @@
   .header_new {
     background: #000d29;
   }
+  .navbar{
+    background-color:#000d29;
+  }
   .collapse .collapse-wrapper {
     width: 100%;
     background-color: #000d29;
     display: block;
   }
   .navbar-brand img {
-    height: 20px;
+    width: 100px;
+    height: auto
   }
+
   
-  .navbar .navbar-toggler{
+  .navbar-toggler:not(.collapsed)
+  {
     background-color: #fff;
     width: 60px;
     padding: 9px 0 0 0;
     color: #02fbf1;
   }
+  
+   .navbar .navbar-toggler{
+    background-color: #000d29;
+    width: 60px;
+    padding: 9px 0 0 0;
+    color: #fff;
+    border: 1.5px solid;
+  } 
   .navbar .navbar-toggler .navbar-toggler-icon {
     color: #02fbf1;
   }
 
+
+
   .navbar .header_center_nav li a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+  }
+  .navbar .header_right_nav li a
+  {
     padding-bottom: 15px;
     padding-top: 15px;
     display: flex;
@@ -134,6 +210,55 @@
     padding-left: 1.5rem;
     color: white;
   }
+  .navbar .header_right_nav li .menuTitle
+  {
+    display: block;
+    padding-left: 1.5rem;
+    color: white;
+  }
+  .cal_w
+  {
+    display: block;
+  }
+  .cal_w .react-calendar .react-calendar__navigation
+  {
+    margin-bottom: 0;
+  }
+   .ms_social_posts .css-1xu1mzw-MuiGrid-root>.MuiGrid-item{
+    padding-left: 0;
+  } 
+  .ms_social_posts .css-1xu1mzw-MuiGrid-root
+  {
+    width: 100%;
+    margin-left: 0;
+  }
+  .calender_wrap{
+    margin-left: 0;
+  }
+  .react-calendar__month-view__weekdays__weekday
+  {
+    padding: 0.1em;
+  }
+  .calender_wrap{
+    height: auto;
+  }
+  
+  /* .collapse:not(.show)
+  {
+    display: block !important;
+    margin-left: 110%;
+  }
+
+  .collapse.show {
+    animation-name: example;
+    animation-duration: 1s;
+  }
+  
+  @keyframes example {
+    from {margin-left : 110%;}
+    to {margin-left: 0;}
+  } */
+
 }
 
 /* For Mobile Landscape View */
@@ -143,20 +268,27 @@
   .header_new {
     background: #000d29;
   }
+  .navbar{
+    background-color:#000d29;
+  }
   .collapse .collapse-wrapper {
     width: 100%;
     background-color: #000d29;
     display: block;
   }
   .navbar-brand img {
-    height: 20px;
+    width: 100px;
+    height: auto
   }
-  .navbar .navbar-toggler {
-    background-color: #fff;
+
+  .navbar .navbar-toggler{
+    background-color: #000d29;
     width: 60px;
     padding: 9px 0 0 0;
-    color: #02fbf1;
-  }
+    color: #fff;
+    border: 1.5px solid;
+  } 
+
   .navbar .navbar-toggler .navbar-toggler-icon {
     color: #02fbf1;
   }
@@ -170,6 +302,14 @@
   .navbar .header_right_nav li a {
     padding-left: 10px;
   }
+
+  .navbar .header_right_nav li a
+  {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+  }
+
   .navbar .header_right_nav li a.header_right_nav_avtar_a {
     padding-left: 5px;
   }
@@ -178,5 +318,42 @@
     display: block;
     padding-left: 1.5rem;
     color: white;
+  }
+  .navbar .header_right_nav li .menuTitle
+  {
+    display: block;
+    padding-left: 1.5rem;
+    color: white;
+  }
+  .cal_w
+  {
+    display: block;
+  }
+  .cal_w .react-calendar .react-calendar__navigation
+  {
+    margin-bottom: 0;
+  }
+  .cal_w .react-calendar
+  {
+    width: 100%;
+  }
+   .ms_social_posts .css-1xu1mzw-MuiGrid-root>.MuiGrid-item{
+    padding-left: 0;
+  } 
+  .ms_social_posts .css-1xu1mzw-MuiGrid-root
+  {
+    width: 100%;
+    margin-left: 0;
+  }
+  .calender_wrap{
+    margin-left: 0;
+  }
+  .react-calendar__month-view__weekdays__weekday
+  {
+    padding: 0.1em;
+  }
+  .calender_wrap{
+    height: auto;
+    
   }
 }
