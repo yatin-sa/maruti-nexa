@@ -170,7 +170,7 @@ color: #0D0C12;
 font: normal normal 500 22px/29px Roboto;
 letter-spacing: 0px;
 color: #fff;
-z-index: 9999999;
+z-index: 999;
 text-transform: uppercase;
 }
 
@@ -237,6 +237,7 @@ color: #0D0C12;
     font: normal normal 500 18px/27px Poppins;
     letter-spacing: 0.13px;
     color: #2D3394;
+    overflow-wrap: anywhere;
 }
 
 .leaderboard_scorelist_item span {

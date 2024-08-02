@@ -444,8 +444,8 @@ ol>li:before {
 /* banner */
 .home_banner {
   background-size: 100% 90%;
-  height: 300px;
-  padding: 60px 0;
+  height: 400px;
+  padding: 100px 0;
 }
 
 .home_banner h2 {
@@ -844,8 +844,8 @@ height: 292px;
   /* banner */
   .home_banner {
     background-size: 100% 90%;
-    height: 300px;
-    padding: 60px 0;
+    height: 400px;
+    padding: 110px 0;
   }
 
   .home_banner h2 {
