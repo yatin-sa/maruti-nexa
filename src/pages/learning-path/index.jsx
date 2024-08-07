@@ -92,7 +92,7 @@ const LearningOverview = () => {
   const [disableBtn, setDisableBtn] = useState(false);
   const [selectedOption, setSelectedOption] = useState("team");
   const [enrollmentLPList, setEnrollmentLPList] = useState([]);
-  
+
   const [qty, setQty] = useState("1");
 
   const [userData, setUserData] = useState({
@@ -255,11 +255,11 @@ const LearningOverview = () => {
     enroll = false,
     price
   ) => {
-    console.log('enroll yatin ',moduleId,
-    courseid,
-    enroll,
-    price,
-  enrollRes?.included)
+    console.log('enroll yatin ', moduleId,
+      courseid,
+      enroll,
+      price,
+      enrollRes?.included)
     if (
       enroll === false &&
       price &&
@@ -338,7 +338,7 @@ const LearningOverview = () => {
       });
   };
 
-  
+
   const addToCart = () => {
     var cart_id = localStorage.getItem("cart_id");
     let config = {
@@ -389,7 +389,7 @@ const LearningOverview = () => {
       },
     };
     var instance_id =
-    Loinstance && Loinstance[0] && Loinstance[0].id ? Loinstance[0].id : "";
+      Loinstance && Loinstance[0] && Loinstance[0].relationships ? Loinstance[0].relationships?.instances?.data[0]?.id : "";
     var formdata = new FormData();
     formdata.append("lo_id", id);
     formdata.append("instance_id", instance_id);
@@ -397,53 +397,53 @@ const LearningOverview = () => {
     axios
       .post("https://viku.space/maruti/getinstructorattendance.php", formdata, config)
       .then((response) => {
-        console.log('viku  ',response)
+        console.log('viku  ', response)
         if (response.data && response.data.success == true) {
           setDisablePageData(response.data.data)
         }
       });
   };
 
-  useEffect(() => {
-   
+  //   useEffect(() => {
 
-    resource.map(function(item,key){
-    //   var preTestTag =
-    //   isFormQuiztag &&
-    //     isFormQuiztag.length > 0 &&
-    //     isFormQuiztag.includes("pretest")
-    //     ? true
-    //     : false;
-    // var postTestTag =
-    //   isFormQuiztag &&
-    //     isFormQuiztag.length > 0 &&
-    //     isFormQuiztag.includes("posttest")
-    //     ? true
-    //     : false;
-    //     if(courseid==1){
-    //       preTestTag = true
-    //     }
-    //     if(courseid==4){
-    //       postTestTag = true
-    //     }
-    // var pageTypeTest = (preTestTag) ? 'pretest' : 'posttest'
-    // if(preTestTag){
-    //   preTestTag = (disablePageData && disablePageData?.pretest) ? true : false
-    // }
-    // if(postTestTag){
-    //   postTestTag = (disablePageData && disablePageData?.posttest) ? true : false
-    // }
-   
-// console.log('posttest mod' ,postTestTag,courseid)
-//     var finalprepostTag = (!postTestTag) ? true : false
-    })
 
-  }, [resource]);
+  //     resource.map(function(item,key){
+  //     //   var preTestTag =
+  //     //   isFormQuiztag &&
+  //     //     isFormQuiztag.length > 0 &&
+  //     //     isFormQuiztag.includes("pretest")
+  //     //     ? true
+  //     //     : false;
+  //     // var postTestTag =
+  //     //   isFormQuiztag &&
+  //     //     isFormQuiztag.length > 0 &&
+  //     //     isFormQuiztag.includes("posttest")
+  //     //     ? true
+  //     //     : false;
+  //     //     if(courseid==1){
+  //     //       preTestTag = true
+  //     //     }
+  //     //     if(courseid==4){
+  //     //       postTestTag = true
+  //     //     }
+  //     // var pageTypeTest = (preTestTag) ? 'pretest' : 'posttest'
+  //     // if(preTestTag){
+  //     //   preTestTag = (disablePageData && disablePageData?.pretest) ? true : false
+  //     // }
+  //     // if(postTestTag){
+  //     //   postTestTag = (disablePageData && disablePageData?.posttest) ? true : false
+  //     // }
+
+  // // console.log('posttest mod' ,postTestTag,courseid)
+  // //     var finalprepostTag = (!postTestTag) ? true : false
+  //     })
+
+  //   }, [resource]);
 
 
   useEffect(() => {
     if (Loinstance && Loinstance.length > 0) {
-     
+
       checkLOAttendance()
     }
 
@@ -1029,18 +1029,18 @@ const LearningOverview = () => {
     }
   }, [response]);
 
-  
+
 
   useEffect(() => {
-    if(enrollmentLPRes && enrollmentLPRes.included && enrollmentLPRes.included.length>0){
+    if (enrollmentLPRes && enrollmentLPRes.included && enrollmentLPRes.included.length > 0) {
       const enrollList = enrollmentLPRes.included.filter(
-        (x) =>  x.type == 'learningObjectInstanceEnrollment');
-        if(enrollList && enrollList.length>0){
-          setEnrollmentLPList(enrollList)
-        }
-      
+        (x) => x.type == 'learningObjectInstanceEnrollment');
+      if (enrollList && enrollList.length > 0) {
+        setEnrollmentLPList(enrollList)
+      }
+
     }
-   console.log('enrolmnt lppppppppp ',enrollmentLPList)
+    console.log('enrolmnt lppppppppp ', enrollmentLPList)
   }, [enrollmentLPRes]);
 
   useEffect(() => {
@@ -1101,7 +1101,7 @@ const LearningOverview = () => {
                   </ul>
                 </div>
                 <div className="col-2">
-                
+
                 </div>
               </div>
             </div>
@@ -1111,18 +1111,18 @@ const LearningOverview = () => {
               <div className="row">
                 <div className="col-lg-4 col-md-12 col-xs-12">
                   <div className="ms_overview_data">
-                  <div className="row">
-                    {/* <div className="col-4">
+                    <div className="row">
+                      {/* <div className="col-4">
                       <img
                         src={response?.data?.attributes?.imageUrl}
                         className="img-fluid"
                       />
                     </div> */}
-                    <div className="col-12">
-                      <h3>Overview</h3>
-                      <p>{response?.data?.attributes?.localizedMetadata[0]?.overview}</p>
+                      <div className="col-12">
+                        <h3>Overview</h3>
+                        <p>{response?.data?.attributes?.localizedMetadata[0]?.overview}</p>
+                      </div>
                     </div>
-                  </div>
                   </div>
                   {/* <button className="lo_sec_btn"><i className="fa-solid fa-envelope"></i> Email</button> */}
                   <button className="lo_sec_btn"><i className="fa-regular fa-bookmark"></i> Save</button>
@@ -1178,7 +1178,7 @@ const LearningOverview = () => {
                         enrollRes?.data?.attributes?.price && !ExistSubs ? (
                         <button type="button" disabled className="ms_maincta">{getLabel(enrollRes)}</button>
                       ) : (
-                        <button type="button" onClick={(e) => handleContinueClick("",id, ((enrollRes?.included) ? true : false), enrollRes?.data?.attributes?.price)} disabled={disableBtn} className="ms_maincta">{getLabel(enrollRes)}</button>
+                        <button type="button" onClick={(e) => handleContinueClick("", id, ((enrollRes?.included) ? true : false), enrollRes?.data?.attributes?.price)} disabled={disableBtn} className="ms_maincta">{getLabel(enrollRes)}</button>
                       )}
                       {enrollRes &&
                         enrollRes.included &&
@@ -1210,221 +1210,184 @@ const LearningOverview = () => {
                 </div>
                 <div className="col-lg-8 col-md-12 col-xs-12 mt-mob ">
                   <div className="ms_module_wrap">
-                  <h3>Learning Plan</h3>
+                    <h3>Learning Plan</h3>
 
 
 
-                  <Box sx={{ marginTop: "20px" }}>
-                    {Loinstance && Loinstance.length > 0
-                      ? Loinstance.map(function (val, ind) {
-                        return (
-                          <div
-                            style={{
-                              background: "#fafafa",
-                              border: "1px solid #ddd",
-                            }}
-                          >
-                            <AccordionDetails>
-                              {val && val.courses && val.courses.length > 0
-                                ? val.courses.map(function (
-                                  course,
-                                  courseid
-                                ) {
-                                  var classStartDate = "";
-                                  var isDateExpired = false;
-                                  var isFormQuiztag =
-                                    course?.attributes?.tags;
-                                  var isFormQuiz =
-                                    isFormQuiztag &&
-                                      isFormQuiztag.length > 0 &&
-                                      isFormQuiztag.includes("form")
-                                      ? true
-                                      : false;
-                                  if (
-                                    isFormQuiz &&
-                                    val.courses[courseid + 1].resource &&
-                                    val.courses[courseid + 1].resource
-                                      .length > 0
+                    <Box sx={{ marginTop: "20px" }}>
+                      {Loinstance && Loinstance.length > 0
+                        ? Loinstance.map(function (val, ind) {
+                          return (
+                            <div
+                              style={{
+                                background: "#fafafa",
+                                border: "1px solid #ddd",
+                              }}
+                            >
+                              <AccordionDetails>
+                                {val && val.courses && val.courses.length > 0
+                                  ? val.courses.map(function (
+                                    course,
+                                    courseid
                                   ) {
-                                    const formClassroom = val.courses[
-                                      courseid + 1
-                                    ].resource.filter(
-                                      (x) =>
-                                        x.attributes.contentType ==
-                                        "Classroom" ||
-                                        x.attributes.contentType ==
-                                        "Virtual Classroom"
-                                    );
+                                    var classStartDate = "";
+                                    var isDateExpired = false;
+                                    var isFormQuiztag =
+                                      course?.attributes?.tags;
+                                    var isFormQuiz =
+                                      isFormQuiztag &&
+                                        isFormQuiztag.length > 0 &&
+                                        isFormQuiztag.includes("form")
+                                        ? true
+                                        : false;
                                     if (
-                                      formClassroom &&
-                                      formClassroom.length > 0
+                                      isFormQuiz &&
+                                      val.courses[courseid + 1].resource &&
+                                      val.courses[courseid + 1].resource
+                                        .length > 0
                                     ) {
-                                      classStartDate =
-                                        formClassroom[0].attributes
-                                          .dateStart;
+                                      const formClassroom = val.courses[
+                                        courseid + 1
+                                      ].resource.filter(
+                                        (x) =>
+                                          x.attributes.contentType ==
+                                          "Classroom" ||
+                                          x.attributes.contentType ==
+                                          "Virtual Classroom"
+                                      );
+                                      if (
+                                        formClassroom &&
+                                        formClassroom.length > 0
+                                      ) {
+                                        classStartDate =
+                                          formClassroom[0].attributes
+                                            .dateStart;
+                                      }
+                                      console.log(
+                                        "in formtag ",
+                                        course.id,
+                                        formClassroom
+                                      );
                                     }
-                                    console.log(
-                                      "in formtag ",
-                                      course.id,
-                                      formClassroom
-                                    );
-                                  }
-                                  if (classStartDate) {
-                                    var CurrentDate = new Date();
-                                    var mydate = new Date(classStartDate);
-                                    mydate.setDate(mydate.getDate() - 10);
-                                    if (CurrentDate > mydate) {
-                                      isDateExpired = true;
+                                    if (classStartDate) {
+                                      var CurrentDate = new Date();
+                                      var mydate = new Date(classStartDate);
+                                      mydate.setDate(mydate.getDate() - 10);
+                                      if (CurrentDate > mydate) {
+                                        isDateExpired = true;
+                                      }
                                     }
-                                  }
-                                  var surveyData = [];
-                                  if (courseSurvey.includes(course.id)) {
-                                    surveyData =
-                                      course &&
-                                        course.resource &&
-                                        course.resource[0]
-                                        ? course.resource[0]
-                                        : [];
-                                    console.log("ihhhihihih ", surveyData);
-                                  }
+                                    var surveyData = [];
+                                    if (courseSurvey.includes(course.id)) {
+                                      surveyData =
+                                        course &&
+                                          course.resource &&
+                                          course.resource[0]
+                                          ? course.resource[0]
+                                          : [];
+                                      console.log("ihhhihihih ", surveyData);
+                                    }
 
-                                  const instanceID = course?.instance?.id;
-                                  var lpcourseclass = 'lp_course_lock'
-                                  const checkEnrollList = enrollmentLPList.filter(
-                                    (x) =>  x.id.includes(course.id));
-                                    if(checkEnrollList && checkEnrollList.length>0){
+                                    const instanceID = course?.instance?.id;
+                                    var lpcourseclass = 'lp_course_lock'
+                                    const checkEnrollList = enrollmentLPList.filter(
+                                      (x) => x.id.includes(course.id));
+                                    if (checkEnrollList && checkEnrollList.length > 0) {
                                       var enrollstatus = checkEnrollList[0].attributes.progressPercent
-                                      if(enrollstatus==100 || checkEnrollList[0].attributes.state =="STARTED"){
-                                         lpcourseclass = 'lp_course_unlock'
-                                      }else{
+                                      if (enrollstatus == 100 || checkEnrollList[0].attributes.state == "STARTED") {
+                                        lpcourseclass = 'lp_course_unlock'
+                                      } else {
                                         lpcourseclass = 'lp_course_lock'
                                       }
                                     }
-                                    if(courseid==0){
+                                    if (courseid == 0) {
+                                      lpcourseclass = 'lp_course_unlock'
+                                    }
+                                    if (courseid == 1) {
+                                      lpcourseclass = 'lp_course_unlock'
+                                    }
+                                    if (courseid == 2) {
+                                      lpcourseclass = 'lp_course_unlock'
+                                    }
+                                    if (courseid == 3) {
+                                      lpcourseclass = 'lp_course_unlock'
+                                    }
+                                    if (courseid == 4) {
                                       lpcourseclass = 'lp_course_unlock'
                                     }
 
 
+                                    var preTestEnableBackend = (disablePageData && disablePageData?.pretest && disablePageData?.pretest == 1) ? true : false;
+                                    var postTestEnableBackend = (disablePageData && disablePageData?.posttest && disablePageData?.posttest == 1) ? true : false;
 
-                                  return courseSurvey.includes(
-                                    course.id
-                                  ) ? (
-                                    <div
-                                      key={courseid}
-                                      className="acc_main"
-                                    >
-                                      <AccordionSummary
-                                        className={"acc_main "+lpcourseclass}
-                                        sx={{
-                                          minHeight: "auto",
-                                          "& .MuiAccordionSummary-content":
-                                          {
-                                            alignItems: "center",
-                                          },
-                                        }}
-                                        disabled={(lpcourseclass == 'lp_course_lock') ? true:false}
-                                      >
-                                        {courseLogo(course.id)}
-                                        <p className="accordian_title">
-                                          {
-                                            course.attributes
-                                              ?.localizedMetadata[0]?.name 
-                                          }
-                                          <IsRequiredComp
-                                            attributes={val.attributes}
-                                          />
+                                      var postTestTag =
+                                      isFormQuiztag &&
+                                        isFormQuiztag.length > 0 &&
+                                        isFormQuiztag.includes("posttest")
+                                        ? true
+                                        : false;
 
-                                          {mydate ? (
-                                            <span>
-                                              <br />
-                                              <span className="accordian_title_span">
-                                                Due date:{" "}
-                                                {mydate.toDateString()}
-                                              </span>
-                                            </span>
-                                          ) : (
-                                            ""
-                                          )}
-                                          {surveyData.attributes.name ? (
-                                            <span
-                                              style={{
-                                                marginRight: "auto",
-                                              }}
-                                            >
-                                              <br />
-                                              <small
-                                                style={{
-                                                  marginRight: "20px",
-                                                }}
-                                              >
-                                                <i class="fa-regular fa-clipboard"></i>{" "}
-                                                {surveyData.attributes.name}
-                                              </small>
-                                              <small>
-                                                <i class="fas fa-tasks"></i>{" "}
-                                                {
-                                                  surveyData.attributes
-                                                    .contentType
-                                                }
-                                              </small>
-                                            </span>
-                                          ) : (
-                                            ""
-                                          )}
+                                    if (preTestEnableBackend == false) {
+                                      lpcourseclass = 'lp_course_lock'
+                                    }
+                                    if (postTestEnableBackend == false && postTestTag) {
+                                      lpcourseclass = 'lp_course_lock'
+                                    }
 
-                                          <span>
-                                            {surveyData.attributes
-                                              .authorDesiredDuration
-                                              ? getTime(
-                                                surveyData.attributes
-                                                  .authorDesiredDuration
-                                              )
-                                              : ""}
-                                          </span>
-                                        </p>
-                                        <div
-                                          className="float-end"
-                                          style={{ marginLeft: "auto" }}
-                                        >
-                                          <button
-                                            className="btn btn-outline-secondary lp_act_btn"
-                                            onClick={(e) =>
-                                              handleContinueClick(
-                                                "",
-                                                course.id,
-                                                true
-                                              )
-                                            }
-                                          >
-                                            Start Learning Now
-                                          </button>
-                                        </div>
-                                      </AccordionSummary>
-                                    </div>
-                                  ) : (
-                                    <Accordion
-                                      key={courseid}
-                                      className={"acc_main "+lpcourseclass}
-                                      disabled={(lpcourseclass == 'lp_course_lock') ? true:false}
-                                    >
-                                      <AccordionSummary
+
+
+                                    //   var preTestTag =
+                                    //   isFormQuiztag &&
+                                    //     isFormQuiztag.length > 0 &&
+                                    //     isFormQuiztag.includes("pretest")
+                                    //     ? true
+                                    //     : false;
+
+                                    // var postTestTag =
+                                    //   isFormQuiztag &&
+                                    //     isFormQuiztag.length > 0 &&
+                                    //     isFormQuiztag.includes("posttest")
+                                    //     ? true
+                                    //     : false;
+                                    //     if(courseid==1){
+                                    //       preTestTag = true
+                                    //     }
+                                    //     if(courseid==4){
+                                    //       postTestTag = true
+                                    //     }
+                                    // var pageTypeTest = (preTestTag) ? 'pretest' : 'posttest'
+                                    // if(preTestTag){
+                                    //   preTestTag = (disablePageData && disablePageData?.pretest) ? true : false
+                                    // }
+                                    // if(postTestTag){
+                                    //   postTestTag = (disablePageData && disablePageData?.posttest) ? true : false
+                                    // }
+
+                                    // console.log('posttest mod' ,postTestTag,courseid)
+                                    //     var finalprepostTag = (!postTestTag) ? true : false
+
+
+
+                                    return courseSurvey.includes(
+                                      course.id
+                                    ) ? (
+                                      <div
+                                        key={courseid}
                                         className="acc_main"
-                                        sx={{
-                                          minHeight: "auto",
-                                          "& .MuiAccordionSummary-content":
-                                          {
-                                            alignItems: "center",
-                                          },
-                                        }}
                                       >
-                                        {courseLogo(course.id)}
-                                        <p className="accordian_title">
-                                          <a
-                                            href={
-                                              "/course-overview/" +
-                                              course.id
-                                            }
-                                          >
+                                        <AccordionSummary
+                                          className={"acc_main " + lpcourseclass}
+                                          sx={{
+                                            minHeight: "auto",
+                                            "& .MuiAccordionSummary-content":
+                                            {
+                                              alignItems: "center",
+                                            },
+                                          }}
+                                          disabled={(lpcourseclass == 'lp_course_lock') ? true : false}
+                                        >
+                                          {courseLogo(course.id)}
+                                          <p className="accordian_title">
                                             {
                                               course.attributes
                                                 ?.localizedMetadata[0]?.name
@@ -1432,73 +1395,172 @@ const LearningOverview = () => {
                                             <IsRequiredComp
                                               attributes={val.attributes}
                                             />
-                                          </a>
 
-                                          {mydate ? (
-                                            <span>
-                                              <br />
-                                              <span className="accordian_title_span">
-                                                Due date:{" "}
-                                                {mydate.toDateString()}
+                                            {mydate ? (
+                                              <span>
+                                                <br />
+                                                <span className="accordian_title_span">
+                                                  Due date:{" "}
+                                                  {mydate.toDateString()}
+                                                </span>
                                               </span>
-                                            </span>
-                                          ) : (
-                                            ""
-                                          )}
-                                        </p>
-                                        <div
-                                          className="float-end"
-                                          style={{ marginLeft: "auto" }}
-                                        >
-                                          <button
-                                            className="btn btn-outline-secondary lp_act_btn"
-                                            onClick={(e) =>
-                                              handleContinueClick(
-                                                "",
-                                                course.id,
-                                                true
-                                              )
-                                            }
-                                          >
-                                            Start Learning Now
-                                          </button>
-                                        </div>
-                                      </AccordionSummary>
-                                      {isDateExpired == false ? (
-                                        <AccordionDetails
-                                          sx={{ padding: "5px 16px" }}
-                                        >
-                                          <div className="accordian_detail_content">
-                                            <h2>List of Modules</h2>
+                                            ) : (
+                                              ""
+                                            )}
+                                            {surveyData.attributes.name ? (
+                                              <span
+                                                style={{
+                                                  marginRight: "auto",
+                                                }}
+                                              >
+                                                <br />
+                                                <small
+                                                  style={{
+                                                    marginRight: "20px",
+                                                  }}
+                                                >
+                                                  <i class="fa-regular fa-clipboard"></i>{" "}
+                                                  {surveyData.attributes.name}
+                                                </small>
+                                                <small>
+                                                  <i class="fas fa-tasks"></i>{" "}
+                                                  {
+                                                    surveyData.attributes
+                                                      .contentType
+                                                  }
+                                                </small>
+                                              </span>
+                                            ) : (
+                                              ""
+                                            )}
 
-                                            {!isNil(course.resource) &&
-                                              course.resource.map(
-                                                (val1, ind1) =>
-                                                  moduletile(
-                                                    val1,
-                                                    ind1,
-                                                    course,
-                                                    classStartDate
-                                                  )
-                                              )}
+                                            <span>
+                                              {surveyData.attributes
+                                                .authorDesiredDuration
+                                                ? getTime(
+                                                  surveyData.attributes
+                                                    .authorDesiredDuration
+                                                )
+                                                : ""}
+                                            </span>
+                                          </p>
+                                          <div
+                                            className="float-end"
+                                            style={{ marginLeft: "auto" }}
+                                          >
+                                            <button
+                                              className="btn btn-outline-secondary lp_act_btn"
+                                              onClick={(e) =>
+                                                handleContinueClick(
+                                                  "",
+                                                  course.id,
+                                                  true
+                                                )
+                                              }
+                                            >
+                                              Start Learning Now
+                                            </button>
                                           </div>
-                                        </AccordionDetails>
-                                      ) : (
-                                        ""
-                                      )}
-                                    </Accordion>
-                                  );
-                                })
-                                : ""}
-                            </AccordionDetails>
-                          </div>
-                        );
-                      })
-                      : ""}
-                  </Box>
-                  
+                                        </AccordionSummary>
+                                      </div>
+                                    ) : (
+                                      <Accordion
+                                        key={courseid}
+                                        className={"acc_main " + lpcourseclass}
+                                        disabled={(lpcourseclass == 'lp_course_lock') ? true : false}
+                                      >
+                                        <AccordionSummary
+                                          className="acc_main"
+                                          sx={{
+                                            minHeight: "auto",
+                                            "& .MuiAccordionSummary-content":
+                                            {
+                                              alignItems: "center",
+                                            },
+                                          }}
+                                        >
+                                          {courseLogo(course.id)}
+                                          <p className="accordian_title">
+                                            <a
+                                              href={
+                                                "/course-overview/" +
+                                                course.id
+                                              }
+                                            >
+                                              {
+                                                course.attributes
+                                                  ?.localizedMetadata[0]?.name
+                                              }
+                                              <IsRequiredComp
+                                                attributes={val.attributes}
+                                              />
+                                            </a>
+
+                                            {mydate ? (
+                                              <span>
+                                                <br />
+                                                <span className="accordian_title_span">
+                                                  Due date:{" "}
+                                                  {mydate.toDateString()}
+                                                </span>
+                                              </span>
+                                            ) : (
+                                              ""
+                                            )}
+                                          </p>
+                                          <div
+                                            className="float-end"
+                                            style={{ marginLeft: "auto" }}
+                                          >
+                                            <button
+                                              className="btn btn-outline-secondary lp_act_btn"
+                                              onClick={(e) =>
+                                                handleContinueClick(
+                                                  "",
+                                                  course.id,
+                                                  true
+                                                )
+                                              }
+                                            >
+                                              Start Learning Now
+                                            </button>
+                                          </div>
+                                        </AccordionSummary>
+                                        {isDateExpired == false ? (
+                                          <AccordionDetails
+                                            sx={{ padding: "5px 16px" }}
+                                          >
+                                            <div className="accordian_detail_content">
+                                              <h2>List of Modules</h2>
+
+                                              {!isNil(course.resource) &&
+                                                course.resource.map(
+                                                  (val1, ind1) =>
+                                                    moduletile(
+                                                      val1,
+                                                      ind1,
+                                                      course,
+                                                      classStartDate
+                                                    )
+                                                )}
+                                            </div>
+                                          </AccordionDetails>
+                                        ) : (
+                                          ""
+                                        )}
+                                      </Accordion>
+                                    );
+                                  })
+                                  : ""}
+                              </AccordionDetails>
+                            </div>
+                          );
+                        })
+                        : ""}
+                    </Box>
+
                   </div>
-                {/* <Box>
+                  {/* <Box>
                   
                     <Card className="overview">
                       <CardContent>
@@ -1540,7 +1602,7 @@ const LearningOverview = () => {
             </div>
           </div>
           <div style={{ background: "#ffff" }} className="p-4"> */}
-            {/* <div className="instructor_grid">
+          {/* <div className="instructor_grid">
             <Grid container alignItems="center">
               <Grid item xs={4}>
                 <div style={{ float: "left" }}>
@@ -1550,7 +1612,7 @@ const LearningOverview = () => {
             </Grid>
           </div> */}
 
-            {/* <Grid container spacing={4}>
+          {/* <Grid container spacing={4}>
               <Grid item xs={8}>
                 <Tabs
                   sx={{ borderBottom: "1px solid #ccc" }}
@@ -1581,7 +1643,7 @@ const LearningOverview = () => {
                     </Card>
                   </Box>
                 )} */}
-                {/* {currentTabIndex === 1 && (
+          {/* {currentTabIndex === 1 && (
                   <Box sx={{ marginTop: "20px" }}>
                     {Loinstance && Loinstance.length > 0
                       ? Loinstance.map(function (val, ind) {
@@ -1608,7 +1670,7 @@ const LearningOverview = () => {
                               </Typography>
                             </> */}
 
-                            {/* <AccordionDetails>
+          {/* <AccordionDetails>
                               {val && val.courses && val.courses.length > 0
                                 ? val.courses.map(function (
                                   course,
@@ -1865,7 +1927,7 @@ const LearningOverview = () => {
               </Grid>
 
               <Grid item xs={4}> */}
-                {/* <Card className="shop_card" >
+          {/* <Card className="shop_card" >
                   <CardContent>
                     <p
                       style={{
@@ -2000,7 +2062,7 @@ const LearningOverview = () => {
 
                   </CardContent>
                 </Card> */}
-              {/* </Grid>
+          {/* </Grid>
             </Grid>
           </div> */}
           <div className="ms_recomm ms-recom-custom">

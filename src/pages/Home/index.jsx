@@ -451,7 +451,7 @@ const Home = () => {
               <img src="mmast1.png" className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src="mmast2.png" className="d-block w-100" alt="..." />
+              <img src="mmast2.jpg" className="d-block w-100" alt="..." />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

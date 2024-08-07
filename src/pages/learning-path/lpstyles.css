@@ -285,7 +285,7 @@ body {
   background: red !important;
 }
 .lp_course_lock {
-  opacity: 0.2;
+  opacity: 0.9;
   background-image: url("../../../public/MarutiSuzuki_Assets/Group 10915.png");
   background-repeat: no-repeat;
   background-position: center center;
