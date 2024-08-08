@@ -44,9 +44,32 @@
 .navbar{
   padding-top: 0;
 }
+.ms_social_posts .css-1xu1mzw-MuiGrid-root>.MuiGrid-item
+{
+  padding-left: 0;
+}
+.cal_w
+{
+  display: block;
+}
+.react-calendar
+{
+  width: 100%;
+}
+.calender_wrap
+{
+  width: 100%;
+  margin-left: 0;
+}
+
+
+
 @media (min-width: 320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 }
+
+
+
 
 /* For Tablet View */
 
