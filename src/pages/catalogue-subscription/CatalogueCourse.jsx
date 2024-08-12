@@ -794,7 +794,7 @@ const CatalogueCourse = () => {
             )} */}
         </div>
       ) : (
-        <div style={{ height: "100vh", width: "100%" }}>
+        <div class="external-course" style={{ height: "100vh", width: "100%" }}>
           <iframe src={src} height="100%" width="100%"></iframe>
         </div>
       )}

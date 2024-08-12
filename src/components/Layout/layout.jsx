@@ -17,6 +17,7 @@ const Layout = () => {
   const path = ["/courses", "/resources", "/badges", "/certificates"];
   useEffect(() => {
     if (path.includes(location.pathname)) {
+      
       setCheck(true);
     } else {
       setCheck(false);
@@ -25,9 +26,11 @@ const Layout = () => {
   return (
     <>
       {<HeaderLayout />}
+     
       <div style={{ height: "100%" }}>
-        <Outlet />
+      <Outlet />
       </div>
+      
       {/* <Footer /> */}
     </>
   );

@@ -1,3 +1,4 @@
+
 .jumbo-container {
   border-radius: 0 !important;
   /* opacity: 0.9; */
@@ -301,9 +302,27 @@ color: #0D0C12;
   color: #000000;
 }
 
+@media screen and (min-device-width: 768px) and (max-device-width: 991px) and (orientation: portrait) {
+  .external-course
+  {
+   padding-top: 5rem; 
+  }
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 960px) and (orientation: landscape) {
+  .external-course
+  {
+   padding-top: 5rem; 
+  }
+}
+
 @media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
 @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
 @media (max-width:600px)  { 
+
+  .external-course
+{
+ padding-top: 5rem; 
+}
 
   .lp_act_btn {
     padding: 2px !important;
@@ -318,4 +337,5 @@ color: #0D0C12;
 .read_right {
   margin: 0 5px;
 }
+
 }
