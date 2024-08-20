@@ -11,7 +11,7 @@ import useAxiosPrivate from "../hooks/useAxiosPrivate";
 const emails = ["username@gmail.com", "user02@gmail.com"];
 
 function Announcements(props) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const [data, setData] = useState([]);
   const axiosPrivate = useAxiosPrivate();
@@ -63,21 +63,22 @@ function Announcements(props) {
 
 
   useEffect(() => {
+    
     if (response && response.data && response.data.length > 0) {
       const allresponse = response.data.filter(
-        (x) => x.attributes?.announcement?.description != ""
+        (x) => (x.attributes && x.attributes.announcement && x.attributes.announcement.description != "")
       );
       if(allresponse && allresponse.length>0){
         setData(allresponse[0])
+        setOpen(true)
       }
-      
-      setOpen(true)
+
     } else {
       setOpen(false)
     }
   }, [response]);
 
-console.log('anno ',data)
+
   return (
     <Dialog onClose={handleClose} open={open}>
       {/* <DialogTitle>Leader</DialogTitle> */}
