@@ -120,8 +120,9 @@ const Classroom = ({ val }) => {
           </HeadingContainer>
         </Header>
       </Grid>
-      <Grid container sx={{ backgroundColor: "#f1f1f1" }}>
-        <List sx={{ width: "100%", maxWidth: 560, padding: "0px 20px" }}>
+      <div className="container"  sx={{ backgroundColor: "#f1f1f1" }}>
+        <div className="row">
+          <div className="col-6">
           <ListItem alignItems="center">
             <ListItemAvatar>
               <CalendarMonthIcon fontSize="large" />
@@ -133,6 +134,8 @@ const Classroom = ({ val }) => {
               )}
             />
           </ListItem>
+          </div>
+          <div className="col-6">
           <ListItem alignItems="center">
             <ListItemAvatar>
               <ChairIcon fontSize="large" />
@@ -146,20 +149,28 @@ const Classroom = ({ val }) => {
               }
             />
           </ListItem>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-6">
           <ListItem alignItems="center">
             <ListItemAvatar>
               <LocationOnIcon fontSize="large" />
             </ListItemAvatar>
             <ListItemText secondary={<>{val.attributes.location}</>} />
           </ListItem>
-        </List>
-        <List sx={{ width: "100%", maxWidth: 360 }}>
+          </div>
+          <div className="col-6">
           <ListItem alignItems="center">
             <ListItemAvatar>
               <QueryBuilderIcon fontSize="large" />
             </ListItemAvatar>
             <ListItemText secondary={getTime(val.attributes.desiredDuration)} />
           </ListItem>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-6">
           <ListItem alignItems="center">
             <ListItemAvatar>
               <PersonIcon fontSize="large" />
@@ -168,8 +179,13 @@ const Classroom = ({ val }) => {
               secondary={<>{val.attributes.instructorNames[0]}</>}
             />
           </ListItem>
-        </List>
-      </Grid>
+          </div>
+          <div className="col-6">
+            
+          </div>
+        </div>
+       
+      </div>
     </Grid>
   );
 };

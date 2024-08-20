@@ -166,7 +166,7 @@ const HeaderLayout = () => {
                   </a>
                 </li>
                 <li className="nav-item dropdown">
-                  <a title="User" className="nav-link dropdown-toggle header_right_nav_avtar_a" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a title={response?.data?.attributes?.name} className="nav-link dropdown-toggle header_right_nav_avtar_a" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <img className="header_right_nav_avtar" src={(response?.data?.attributes?.avatarUrl) ? response?.data?.attributes?.avatarUrl : "MarutiSuzuki_Assets/default_user_avatar.svg"} />
                   <span className="menuTitle">User</span>
                   </a>

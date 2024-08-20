@@ -33,9 +33,9 @@ const CalendarWidget = ({ open, handleClose }) => {
             "December",
         ];
         var month = monthNames[dateObj.getMonth()]; //months from 1-12
-        var day = dateObj.getUTCDate();
+        // var day = dateObj.getUTCDate();
+        var day = dateObj.getDate();
         var year = dateObj.getUTCFullYear();
-
         return month + " " + day + " " + year;
     }
 
