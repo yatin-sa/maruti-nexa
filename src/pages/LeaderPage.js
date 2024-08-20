@@ -195,7 +195,7 @@ const LeaderPage = (props) => {
                         return (<div className="col-xs-6 col-md-4">
                           <div className="leaderboard_scorelist_item">
                             <div className="leaderboard_scorelist_item_circle">{key + 1}</div>
-                            <div style={{ flex: "1" }}>
+                            <div className="leaderboard_scorelist_item_text" style={{ flex: "1" }}>
                               <h4>{item?.attributes?.name}</h4>
                               <p>ID#{item?.id}</p>
                             </div>

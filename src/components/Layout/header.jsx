@@ -154,19 +154,19 @@ const HeaderLayout = () => {
               <ul className="navbar-nav mb-2 mb-lg-0 header_right_nav">
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a title="Chat" className="nav-link" href="#">
                     <img src="/MarutiSuzuki_Assets/chat_icon.png" />
                     <span className="menuTitle">Chat</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a title="Notification" className="nav-link" href="#">
                     <img src="/MarutiSuzuki_Assets/notification_icon.png" />
                     <span className="menuTitle">Notification</span>
                   </a>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle header_right_nav_avtar_a" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a title="User" className="nav-link dropdown-toggle header_right_nav_avtar_a" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <img className="header_right_nav_avtar" src={(response?.data?.attributes?.avatarUrl) ? response?.data?.attributes?.avatarUrl : "MarutiSuzuki_Assets/default_user_avatar.svg"} />
                   <span className="menuTitle">User</span>
                   </a>

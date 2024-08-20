@@ -226,10 +226,14 @@ color: #0D0C12;
     height: 60px;
     border-radius: 100%;
     background: #17238d 0% 0% no-repeat padding-box;
-    margin-right: 10px;
+    margin-right: 0px;
     text-align: center;
     color: #fff;
     font: normal normal 600 22px/60px Poppins;
+}
+.leaderboard_scorelist_item_text
+{
+    padding-left: 20px;
 }
 
 .leaderboard_scorelist_item h4 {

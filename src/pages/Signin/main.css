@@ -575,6 +575,7 @@ input.input100 {
     padding-right: 15px;
     padding-top: 70px;
   }
+  
 }
 
 /*------------------------------------------------------------------
@@ -756,3 +757,46 @@ letter-spacing: 0px;
 color: #B7B7B7;
 opacity: 1;
 }
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1191px) and (orientation: landscape) {
+  .ms_sign_content .ms_sign_card a
+  {
+    width: 100% !important;
+  }
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1023px) and (orientation: portrait) {
+  .container, .container-sm
+  {
+    max-width: 720px;
+  }
+}
+@media screen and (max-device-width: 576px) and (orientation: portrait) {
+	.ms_sign_header
+  {
+    margin-bottom: 70px;
+  }
+  .ms_sign_content .ms_sign_card
+  {
+    display: block;
+  }
+  .ms_sign_card_left
+  {
+    width: 100%;
+  }
+  .ms_sign_content .ms_sign_card a
+  {
+    width: 100% !important;
+  }
+  .ms_sign_card_left
+  {
+    padding: 30px 20px;
+  }
+  .ms_sign_card_right
+  {
+    padding: 60px 20px;
+  }
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 960px) and (orientation: landscape) {
+  
+}
+

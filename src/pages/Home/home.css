@@ -211,7 +211,7 @@ ol>li:before {
 
 .mylearning h2 {
   text-align: left;
-  font: normal normal bold 45px/20px Roboto;
+  font: normal normal bold 35px/20px Roboto;
   letter-spacing: 2.02px;
   color: #FFFFFF;
   margin-bottom: 30px;
@@ -226,7 +226,7 @@ ol>li:before {
 /* social list */
 .ms_social_posts h2 {
   text-align: left;
-  font: normal normal bold 45px/20px Roboto;
+  font: normal normal bold 35px/20px Roboto;
   letter-spacing: 2.02px;
   color: #2D3394;
   margin-bottom: 32px;
@@ -271,6 +271,7 @@ ol>li:before {
   letter-spacing: 0px;
   color: #0D0C12;
   margin-bottom: 13px;
+  padding-left: 10px;
 }
 
 .ms_social_post_item span {
@@ -290,6 +291,7 @@ ol>li:before {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 0;
+  padding-left: 10px;
 }
 
 /*  recoomentdation peer */
@@ -304,7 +306,7 @@ ol>li:before {
 
 .ms_recomm h2 {
   text-align: left;
-  font: normal normal bold 45px/20px Roboto;
+  font: normal normal bold 35px/35px Roboto;
   letter-spacing: 2.02px;
   color: #FFFFFF;
   margin-bottom: 30px;
@@ -942,7 +944,7 @@ height: 292px;
   }
 
   .ms_recomm h2 {
-    font: normal normal bold 20.5px/10px Roboto;
+    font: normal normal bold 18.5px/10px Roboto;
     letter-spacing: 1.02px;
     margin-bottom: 15px;
   }
@@ -1007,7 +1009,7 @@ height: 292px;
   }
 
   .ms_quiz_btn {
-    padding: 11px 8px;
+    padding: 10px 5px;
     border-radius: 7px;
     font: normal normal normal 12px/10px Roboto;
   }

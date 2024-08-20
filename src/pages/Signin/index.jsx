@@ -62,6 +62,7 @@ const SignIn = () => {
     );
   return (
     <>
+    <div className="ms_sign_page">
       <header>
         <nav className={"navbar navbar-expand-lg ms_sign_header"}>
           <div className="container">
@@ -103,8 +104,8 @@ const SignIn = () => {
       <dic className="ms_sign_content">
         <div className="container">
           <div className="row">
-            <div className="col-3"></div>
-            <div className="col-6">
+            <div className="col-xxl-3 col-xl-2 col-lg-1"></div>
+            <div className="col-xxl-6 col-xl-8 col-lg-10">
               <div className="ms_sign_card">
                 <div className="ms_sign_card_left">
                   <img src="/MarutiSuzuki_Assets/Group 10915.png" />
@@ -121,7 +122,7 @@ const SignIn = () => {
 
               </div>
             </div>
-            <div className="col-3"></div>
+            <div className="col-xxl-3 col-xl-2 col-lg-1"></div>
           </div>
         </div>
       </dic>
@@ -131,6 +132,7 @@ const SignIn = () => {
         </div>
       </div>
 
+    </div>
     </>
   );
 };
