@@ -927,10 +927,12 @@ height: 292px;
   .ms_social_post_item h4 {
     font: normal normal 600 10px/10px Plus Jakarta Sans;
     margin-bottom: 8px;
+    margin-bottom: revert;
   }
 
   .ms_social_post_item span {
     font: normal normal 600 9px/10px Plus Jakarta Sans;
+    float: left !important;
   }
 
   .ms_social_post_item p {
@@ -1088,6 +1090,250 @@ height: 292px;
     padding: 18px 10px;
     border-radius: 12px;
     font: normal normal normal 16px / 16px Roboto;
+}  
+
+ 
+
 }
 
+@media screen and (min-device-width: 320px) and (max-device-width: 960px) and (orientation: landscape) {
+  .ms_quiz_design p
+  {
+    font: normal normal normal 16px / 25px Roboto;
+  }
+  .home_banner {
+    background-size: 100% 90%;
+    height: 400px;
+    padding: 100px 0;
+  }
+  
+  .home_banner h2 {
+    font: normal normal 300 25px/35px Roboto;
+  }
+  
+  .home_banner p {
+    font: normal normal 300 11px/17px Roboto;
+  }
+  
+  .home_banner button {
+    width: 175px;
+    height: 53px;
+    /* UI Properties */
+    background: #00FFF5 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 1;
+  
+    text-align: center;
+    font: normal normal medium 22px/100px Adobe Clean;
+    letter-spacing: 0px;
+    color: #2D3394;
+  }
+  
+  
+  /*  mylearning  */
+  .mylearning {
+    background-size: 100% 90%;
+    padding: 110px 0px;
+  }
+  
+  .mylearning h2 {
+    font: normal normal bold 22.5px/10px Roboto;
+    letter-spacing: 1.02px;
+    margin-bottom: 15px;
+  }
+  
+  .ms_recomcarousel .col-3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  
+  /* social list */
+  .ms_social_posts h2 {
+    font: normal normal bold 22.5px/15px Roboto;
+    letter-spacing: 1.02px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .ms_social_posts h2 a {
+    font: normal normal 500 11px/18px Poppins;
+  }
+  
+  .ms_social_posts h2 a img {
+    width: 9px;
+    height: 18px;
+    margin-left: 15px;
+  }
+  
+  .ms_social_post_item {
+    border-radius: 10px;
+    padding: 11px 12px;
+    margin-bottom: 25px;
+  }
+  
+  .ms_social_post_item img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .ms_social_post_item_content {
+    padding: 5px 10px;
+  }
+  
+  .ms_social_post_item h4 {
+    font: normal normal 600 10px/10px Plus Jakarta Sans;
+    margin-bottom: 8px;
+  }
+  
+  .ms_social_post_item span {
+    font: normal normal 600 9px/10px Plus Jakarta Sans;
+  }
+  
+  .ms_social_post_item p {
+    font: normal normal 500 9px/10px Plus Jakarta Sans;
+  }
+  
+  /*  recoomentdation peer */
+  .ms_recomm {
+    background-size: 100% 100%;
+    padding: 70px 0px;
+  }
+  
+  .ms_recomm h2 {
+    font: normal normal bold 20.5px/10px Roboto;
+    letter-spacing: 1.02px;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-button-group {
+    position: absolute;
+    top: -40px;
+    left: auto;
+    right: -10px !important
+  }
+  
+  .carousel-button-group img {
+    width: 12px;
+  }
+  
+  .carousel-button-group button {
+    width: 25px;
+  }
+  
+  .carousel-item-padding-40-px {
+    /* margin-right: 26px; */
+  }
+  
+  
+  
+  
+  /* question of day */
+  .ms_quizday {
+    padding: 20px 0;
+    background: #fff;
+  }
+  
+  .ms_quizday h2 {
+    font: normal normal bold 22.5px/20px Roboto;
+    letter-spacing: 1.02px;
+    margin-bottom: 15px;
+  }
+  
+  .ms_quizday h2 a {
+    font: normal normal 500 11px/18.5px Poppins;
+  }
+  
+  .ms_quizday h2 a img {
+    margin-left: 15px;
+    width: 9px;
+    height: 18px;
+  }
+  
+  .ms_quizday p {
+    font: normal normal normal 14px/21px Roboto;
+    letter-spacing: 1.26px;
+  }
+  
+  .ms_quiz_design {
+    border-radius: 15px;
+    padding: 15px;
+    margin: 60px auto;
+  }
+  
+  .ms_quiz_design p {
+    font: normal normal normal 13px/13px Roboto;
+  }
+  
+  .ms_quiz_btn {
+    padding: 11px 8px;
+    border-radius: 7px;
+    font: normal normal normal 12px/10px Roboto;
+  }
+  
+  .ms_quiz_icon {
+    margin-top: -51px;
+    margin-left: -15px;
+    height: 60px;
+  }
+  
+  .ms_quiz_design div:nth-child(2) {
+    flex: 2;
+    padding: 2px 5px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  .ms_annoucment h2 {
+    text-align: left;
+    font: normal normal bold 24px/32px Roboto;
+    letter-spacing: 0px;
+    color: #2D3394;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #2D3394;
+    margin-bottom: 20px;
+  }
+  
+  
+  .ms_annoucment p {
+    text-align: left;
+    font: normal normal normal 22px/34px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+  }
+  
+  
+  .img_wrap{
+    height: 20px;
+  }
+  .calender_wrap p,
+  .calender_wrap p a {
+  font-size: 10px;
+  }
+  .pill_session {
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 25px;
+  font-size: 7px;
+  }
+  
+  .calender_wrap {
+  width: 350px;
+  max-width: 100%;
+  background: "#fff";
+  background-color: #fff;
+  border: "1px solid #a0a096";
+  font-family: "Arial, Helvetica, sans-serif";
+  line-height: 1.125em;
+  padding: 20px 5px;
+  border: 1px solid #000;
+  margin-left: 34px;
+  height: 292px;
+  }
 }

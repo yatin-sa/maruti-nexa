@@ -67,7 +67,7 @@ const SignIn = () => {
         <nav className={"navbar navbar-expand-lg ms_sign_header"}>
           <div className="container">
             <a className="navbar-brand" href="/courses">
-              <img src="/MarutiSuzuki_Assets/maruti-suzuki-arena-vector-logo.png" />
+              <img src="/maruti-suzuki-nexa-blue.png" />
             </a>
             {/* <SearchBar /> */}
             <button
@@ -79,7 +79,7 @@ const SignIn = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon fas fa-bars"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent" >
               <div className="mx-auto">

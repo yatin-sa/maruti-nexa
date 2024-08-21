@@ -669,3 +669,193 @@ color: #0D0C12;
 
 }
 }
+
+/* For Mobile Landscape View */
+@media screen and (min-device-width: 320px) and (max-device-width: 960px) and (orientation: landscape) {
+    .leaderboard_banner {
+        padding: 200px 0;
+        height: 400px;
+    }
+    .leaderboard_banner h2 {
+        font: normal normal 500 25px/40px Roboto;
+        margin-bottom: 10px;
+    }
+    .leaderboard_banner p {
+        font: normal normal normal 20px/25px Roboto;
+    }
+    /* speedometer */
+    .leaderboard_banner_speedometer{
+        height: 200px;
+        background-size: 106% 100%;
+        padding: 20px 20px;
+        margin-bottom: 70px;
+    }
+    .leaderboard_banner_speedometer_left h4,.leaderboard_banner_speedometer_right h4{
+    font: normal normal 500 16px/16px Roboto;
+    }
+    .leaderboard_banner_speedometer_left h5,.leaderboard_banner_speedometer_right h5{
+        font: normal normal 500 16px/18px Roboto;
+    }
+     
+      .speed__wheel {
+        left: 0; 
+      right: 0; 
+      top: -5px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%);
+        
+      }
+      
+      .sub_ticks {
+        bottom: 50%;
+        left: 15px;
+        width: 60px;
+        height: 2px;
+        transform-origin: right center;
+        border-left: 10px solid #3eedf2;
+    }
+    
+    .sub_ticks1 {
+        position: absolute;
+        bottom: 50%;
+        left: 15px;
+        width: 60px;
+        height: 2px;
+        transform-origin: right center;
+        border-left: 10px solid red;
+    }
+    .sub_ticks1 span{
+        transform-origin: 10px 145px;
+        transform: (-90deg);
+        font-size: 10px;
+    }
+      
+      .pointer {
+        position: relative;
+        background: #2D3394;
+        height: 90px;
+        width: 15px;
+        left: 70px;
+        top: 5px;
+        clip-path: polygon(9px 10px, 11px 10px, 20px 150px, 10px 190px, 0 150px);
+        transform-origin: 10px 100px;
+        animation: animate-pointer 10s ease-in-out infinite;
+      }
+      
+      .pointer::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: gray;
+        top: 140px;
+        left: 5px;
+        border-radius: 50%;
+      }
+      
+      .endpoint {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: grey;
+        top: 225px;
+        left: 235px;
+        border-radius: 50%;
+      }
+      
+    
+    
+    
+    .leaderboard_progressbar_car{
+       bottom: 15px;
+       left: -20px;
+       width: 100px;
+    }
+    .leaderboard_progressbar_rect{
+        bottom: 22px;
+        right: 0px;
+        height: 90px;
+     }
+    .leaderboard_postbanner {
+        margin: 45px 0;
+    }
+    .leaderboard_progressbar_wrap_text{
+        top: -70px;
+        right: 12px;
+    font: normal normal 500 10px/10px Roboto;
+    }
+    
+    .leaderboard_progressbar {
+        height: 25px;
+        border-radius: 8px;
+        z-index: 999
+    }
+    .leaderboard_levels{
+        margin: 7px 0;
+    }
+    .leaderboard_levels_item h4{
+    font: normal normal normal 14px/16px Roboto;
+    }
+    /* leaderboard list */
+    .leaderboard_scorelist {
+        padding: 15px 20px;
+        margin-top: 20px;
+    }
+    
+    .leaderboard_scorelist_left img {
+        width: 60px;
+        height: 52px;
+        margin: 25px 0;
+        margin-right: 30px;
+        display: none;
+    }
+    
+    .leaderboard_scorelist_item {
+        display: flex;
+        margin: 10px 0;
+    }
+    
+    
+    .leaderboard_scorelist_item_circle {
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        font: normal normal 600 20px/40px Poppins;
+    }
+    
+    .leaderboard_scorelist_item h4 {
+        font: normal normal 500 14px/14px Poppins;
+    }
+    
+    .leaderboard_scorelist_item span {
+        font: normal normal normal 12px/16px Poppins;
+        margin: 0 10px;
+    }
+    
+    .leaderboard_scorelist_item p {
+        font: normal normal normal 10px/16px Poppins;
+        margin-bottom: 0;
+    }
+    
+    /* leaderboard_info */
+    .leaderboard_info{
+        margin: 20px 0;
+    }
+    .leaderboard_info_item{
+        margin: 30px 0;
+    }
+
+
+
+.leaderboard_info .leaderboard-heading3 {
+    font: normal normal normal 12px/14px Roboto;
+
+}
+.leaderboard_info .leaderboard-heading2 {
+    font: normal normal bold 14px/16px Roboto;
+    margin-bottom: 10px;
+
+}
+}
