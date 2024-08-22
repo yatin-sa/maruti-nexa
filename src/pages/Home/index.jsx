@@ -619,9 +619,11 @@ const Home = () => {
         </div>
       </>
       ) : (
-        <div style={{ height: "100vh", width: "100%" }}>
-          <iframe src={LoSrc} height="100%" width="100%"></iframe>
-        </div>
+        <div style={{position:"fixed",width:"100%",zIndex:"99999"}}>
+          <div style={{ height: "100vh", width: "100%" }}>
+        <iframe src={LoSrc} height="100%" width="100%"></iframe>
+      </div></div>
+        
       )}
     </>
   );
