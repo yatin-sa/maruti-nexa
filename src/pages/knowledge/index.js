@@ -76,16 +76,20 @@ const CourseOverview = () => {
       },
     };
     setLoading(true);
-    fetch(process.env.REACT_APP_ALM_URL + '/primeapi/v2/learningObjects?page[limit]=10&filter.loTypes=jobAid&sort=name&filter.ignoreEnhancedLP=true',
+    fetch(process.env.REACT_APP_ALM_URL + '/primeapi/v2/learningObjects?include=instances.loResources.resources&page[limit]=10&filter.loTypes=jobAid&sort=name&filter.ignoreEnhancedLP=true',
       options
     ).then((response1) => {
       response1.json().then((data) => {
-        setJobAids(data?.data);
+        const jobaids = data.included.filter(
+          (x) => (x.id.indexOf("jobAid:") > -1) && x.type=='resource'
+        );
+
+        setJobAids(jobaids);
         setLoading(false);
       });
     });
   };
-  console.log("clabel things", jobAids);
+  console.log("job aids things", jobAids);
   useEffect(async () => {
     getJobAids();
   }, [adminAccessToken]);
@@ -172,7 +176,7 @@ const CourseOverview = () => {
                           <div className="card job_card shadow-lg ">
                             <div className="row">
                               <div className="col-3"><p><i className="fa-solid fa-file-pdf"></i></p></div>
-                              <div className="col-9"><h2>{item.attributes.localizedMetadata[0].name}</h2></div>
+                              <div className="col-9"><h2><a target="_blank" href={item.attributes.downloadUrl}>{item.attributes.name}</a></h2></div>
                             </div>
 
 

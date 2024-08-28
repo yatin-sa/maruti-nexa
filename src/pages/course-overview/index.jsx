@@ -516,6 +516,7 @@ const CourseOverview = () => {
       const LoInsarray = response.included.filter(
         (x) => x.type === "learningObjectInstance" && x.attributes.isDefault
       );
+      console.log('main instance',LoInsarray)
       //catching default instance
 
       setLoInstance(LoInsarray);

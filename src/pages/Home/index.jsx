@@ -570,6 +570,11 @@ const Home = () => {
         </div>
         <div className="ms_recomm">
           <div className="container">
+            {/* <RecommendedMaxruti type="peer_group" pratham={pratham} /> */}
+          </div>
+        </div>
+        <div className="ms_recomm">
+          <div className="container">
             <RecommendedMaruti type="peer_group" pratham={pratham} />
           </div>
         </div>
