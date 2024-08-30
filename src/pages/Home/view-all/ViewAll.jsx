@@ -123,7 +123,7 @@ const ViewAllLearnings = () => {
             {!isEmpty(mainData) &&
               mainData.map((val, ind) => {
                 return (
-                  <div className="col-3" key={ind} item xs={4}>
+                  <div className="col-lg-3 col-md-6" key={ind} item xs={4}>
                      <Mcard key={ind}  loid={val.id}  imageUrl={val.attributes?.imageUrl} title={val.attributes.localizedMetadata[0].name}  time={val?.attributes?.duration} price={val.attributes.price} type={val.attributes.loType} isPratham={true}></Mcard>
                     
                   </div>

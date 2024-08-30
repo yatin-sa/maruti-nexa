@@ -54,6 +54,7 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import ReactTimeAgo from 'react-time-ago'
 import CalendarWidget from "./CalendarWidget";
+import SearchBar from "../../components/Search";
 
 const style = {
   position: "absolute",
@@ -425,7 +426,9 @@ const Home = () => {
       {LoSrc === "" ? (<>
         <GamificationDialog open={open} handleClose={() => setOpen(false)} />
         <Announcements />
+       
         <div className="home_banner">
+        <div className="search_bar"><SearchBar /></div>
           <div className="container">
             <div className="row">
               <div className="col-md-7 col-xs-9">
@@ -568,9 +571,9 @@ const Home = () => {
             
           </div>
         </div>
-        <div className="ms_recomm">
+        <div className="ms-recomm-role">
           <div className="container">
-            {/* <RecommendedMaxruti type="peer_group" pratham={pratham} /> */}
+           <RecommendedMaruti type="peer_group" pratham={pratham} /> 
           </div>
         </div>
         <div className="ms_recomm">

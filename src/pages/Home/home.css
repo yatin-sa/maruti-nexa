@@ -294,6 +294,24 @@ ol>li:before {
   padding-left: 10px;
 }
 
+/* recomentadation role */
+.ms-recomm-role
+{
+  margin: 5rem 0;
+  background-image: linear-gradient(#000d29, #72b1cc);
+}
+.ms-recomm-role .container
+{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.ms-recomm-role h2 {
+  text-align: left;
+  font: normal normal bold 35px/35px Roboto;
+  letter-spacing: 2.02px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
 /*  recoomentdation peer */
 .ms_recomm {
   background: url('../../../public/MarutiSuzuki_Assets/list_bg_2.png');
@@ -846,8 +864,8 @@ height: 292px;
   /* banner */
   .home_banner {
     background-size: 100% 90%;
-    height: 400px;
-    padding: 110px 0;
+    height: 450px;
+    padding: 150px 0;
   }
 
   .home_banner h2 {
