@@ -1,20 +1,11 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-import { isEmpty, isNil } from "lodash";
+import { isEmpty } from "lodash";
 import useAxios from "../hooks/useAxios";
 import AuthClient from "../api";
 import { useDispatch } from "react-redux";
-import { setCredentials } from "../features/Auth/authSlice";
-import LinearProgress from "@mui/material/LinearProgress";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
-import TextField from "@mui/material/TextField";
-import { Grid } from "@mui/material";
 import "./search.css";
-// import "./util.css";
-import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const filterData = (query, data) => {
@@ -49,7 +40,11 @@ const SearchBar = () => {
     });
   }, []);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   handleSearch();
+  // }, [searchQuery]);
+
+  function handleSearch() {
     if (searchQuery.length > 2) {
       axiosReq({
         axiosInstance: AuthClient,
@@ -57,7 +52,7 @@ const SearchBar = () => {
           process.env.REACT_APP_ALM_URL +
           "/primeapi/v2/search?page[limit]=10&query=" +
           searchQuery +
-          "&autoCompleteMode=true&filter.loTypes=course,learningProgram&sort=relevance&filter.ignoreEnhancedLP=true&matchType=phrase&persistSearchHistory=true",
+          "&autoCompleteMode=true&filter.loTypes=course,learningProgram&sort=relevance&filter.ignoreEnhancedLP=false&matchType=phrase&persistSearchHistory=true",
         method: "GET",
         requestConfig: {
           params: {},
@@ -68,7 +63,7 @@ const SearchBar = () => {
         },
       });
     }
-  }, [searchQuery]);
+  }
 
   useEffect(() => {
     if (!isEmpty(response)) {
@@ -86,31 +81,68 @@ const SearchBar = () => {
   return (
     <>
       <div className="search_bar">
-        <form className="main_search_form">
+        <form
+          className="main_search_form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSearch();
+          }}
+        >
           <div className="searchInput">
             <input
               type="text"
-              placeholder="Search"
+              placeholder="What do you want to learn..."
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            {dataFiltered && dataFiltered.length > 0 ? (
+
+            {dataFiltered.length > 0 && <div className="resulticon">
               <ul className="resultBox">
                 {dataFiltered.map(function (item) {
+                  const lastIndex = (item.id === 5);
                   return (
                     <li key={item.id}>
                       <a href={"/course-overview/" + item.id}>
-                        <img src={item.attributes.imageUrl} />
-                        {item.attributes.name}
+                        <div className="searchResultITemContainer">
+                          <img src={item.attributes.imageUrl} />
+                          {item.attributes.name}
+                        </div>
                       </a>
                     </li>
                   );
                 })}
               </ul>
-            ) : (
+            </div>}
+            {/* ) : (
               ""
-            )}
-            <div className="icon">
-              <SearchIcon style={{ fill: "#2d3494" }} />
+            )} */}
+            <div className="icon" onClick={handleSearch}>
+              <svg
+                width="32"
+                height="33"
+                viewBox="0 0 32 33"
+                className="searchIconHeader"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="icon / feathericons / search">
+                  <path
+                    id="Vector"
+                    d="M14.6667 25.7719C20.5577 25.7719 25.3333 20.9963 25.3333 15.1053C25.3333 9.21423 20.5577 4.4386 14.6667 4.4386C8.77563 4.4386 4 9.21423 4 15.1053C4 20.9963 8.77563 25.7719 14.6667 25.7719Z"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    id="Vector_2"
+                    d="M28.0002 28.4386L22.2002 22.6386"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
             </div>
           </div>
         </form>

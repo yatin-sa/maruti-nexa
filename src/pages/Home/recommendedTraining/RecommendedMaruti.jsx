@@ -13,6 +13,7 @@ import Mcard from "../../../components/Mcard";
 
 const RecommendedMaruti = (props) => {
     console.log('recom ',props)
+    const isTitle = (props && props.heading) ? props.heading : ''
     const isPratham = (props && props.pratham) ? props.pratham : false
     const isLoPage = (props && props.lo) ? true : false
     const { axiosReq, response, loading } = useAxios();
@@ -99,7 +100,7 @@ const RecommendedMaruti = (props) => {
                 <CarouselSkeleton />
             ) : (
                 <div>
-                    <h2>{(isLoPage) ? 'YOU MAY ALSO LIKE' : 'RECOMMENDATION FROM PEERS'}</h2>
+                    <h2>{(isTitle) ? isTitle : (isLoPage) ? 'YOU MAY ALSO LIKE' : 'RECOMMENDATION FROM PEERS'}</h2>
                     {!isEmpty(response?.included) ? (
                         <div className={`ms_recomcarousel`}>
                             {!isEmpty(response?.data) ? (

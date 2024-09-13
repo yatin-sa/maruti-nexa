@@ -54,7 +54,6 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import ReactTimeAgo from 'react-time-ago'
 import CalendarWidget from "./CalendarWidget";
-import SearchBar from "../../components/Search";
 
 const style = {
   position: "absolute",
@@ -428,7 +427,7 @@ const Home = () => {
         <Announcements />
        
         <div className="home_banner">
-        <div className="search_bar"><SearchBar /></div>
+        {/* <div className="search_bar"><SearchBar /></div> */}
           <div className="container">
             <div className="row">
               <div className="col-md-7 col-xs-9">
@@ -573,7 +572,7 @@ const Home = () => {
         </div>
         <div className="ms-recomm-role">
           <div className="container">
-           <RecommendedMaruti type="peer_group" pratham={pratham} /> 
+           <RecommendedMaruti type="skill_interest" heading="RECOMMENDATION BASED ON ROLE" pratham={pratham} /> 
           </div>
         </div>
         <div className="ms_recomm">

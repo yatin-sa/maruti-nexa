@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./layout.module.css";
 import Button from "../button";
 import IconButton from "@mui/material/IconButton";
@@ -31,6 +31,7 @@ const HeaderLayout = () => {
   const navigate = useNavigate();
   const [adminrole, setAdminRole] = useState(false);
   const [headerClass, setHeaderClass] = useState('fixed-top');
+  const [searchExpanded, setSearchExpanded] = useState(false);
 
   console.log(location.pathname);
   const handleLogout = () => {
@@ -49,7 +50,9 @@ const HeaderLayout = () => {
     });
   }, []);
 
-
+  function activateSearch() {
+    setSearchExpanded((oldValue) => !oldValue);
+  }
   const logoStyle = {
     width: "200px",
     height: "100px",
@@ -89,6 +92,22 @@ const HeaderLayout = () => {
   useEffect(() => {
     if (!isNil(accessToken)) getUser();
   }, [accessToken]);
+
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setSearchExpanded(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
 
   if (isNil(accessToken)) return <></>;
 
@@ -153,7 +172,52 @@ const HeaderLayout = () => {
 
               <ul className="navbar-nav mb-2 mb-lg-0 header_right_nav">
 
-                <li className="nav-item">
+              <li className="nav-item" ref={wrapperRef}>
+                    {!searchExpanded && (
+                      <a
+                        title="Search"
+                        className="nav-link"
+                        role="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          activateSearch();
+                        }}
+                      >
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 32 33"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g id="icon / feathericons / search">
+                            <path
+                              id="Vector"
+                              d="M14.6667 25.7719C20.5577 25.7719 25.3333 20.9963 25.3333 15.1053C25.3333 9.21423 20.5577 4.4386 14.6667 4.4386C8.77563 4.4386 4 9.21423 4 15.1053C4 20.9963 8.77563 25.7719 14.6667 25.7719Z"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              id="Vector_2"
+                              d="M28.0002 28.4386L22.2002 22.6386"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </g>
+                        </svg>
+
+                        <span className="menuTitle hidden-def">Search</span>
+                      </a>
+                    )}
+                    {searchExpanded && <SearchBar></SearchBar>}
+                  </li>
+                  {!searchExpanded && (
+                    <>
+                    <li className="nav-item">
                   <a title="Chat" className="nav-link" href="#">
                     <img src="/MarutiSuzuki_Assets/chat_icon.png" />
                     <span className="menuTitle">Chat</span>
@@ -185,6 +249,13 @@ const HeaderLayout = () => {
                     </li>
                   </ul>
                 </li>
+                    </>
+                  )}
+
+
+
+                
+               
               </ul>
               </div>
             </div>

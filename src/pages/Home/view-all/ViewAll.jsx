@@ -45,8 +45,9 @@ const ViewAllLearnings = () => {
         endpoint: "/learningObjects",
         requestConfig: {
           params: {
-            "filter.learnerState": "enrolled,completed,started",
+            // "filter.learnerState": "enrolled,completed,started",
             "filter.tagName": filter,
+            "page[cursor]": pageCursor
           },
         },
       });
