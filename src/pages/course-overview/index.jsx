@@ -240,9 +240,11 @@ const CourseOverview = () => {
       });
     } else {
       if(response?.data?.attributes?.tags && response?.data?.attributes?.tags.includes('proctoring')){
+       var playerUrlN = `${process.env.REACT_APP_ALM_URL}/app/player?lo_id=${id}&access_token=${accessToken}`;
+        getProctor(playerUrlN)
         // navigate(`/test-page?lo_id=${id}&access_token=${accessToken}&module_id=${moduleId}`)
         
-        window.open(`https://sa.explorewithalpha.in/test-page?lo_id=${id}&access_token=${accessToken}&module_id=${moduleId}`);
+        // window.open(`https://sa.explorewithalpha.in/test-page?lo_id=${id}&access_token=${accessToken}&module_id=${moduleId}`);
         // window.open(process.env.REACT_APP_URL+`/test-page?lo_id=${id}&access_token=${accessToken}&module_id=${moduleId}`);
         // window.open(`https://viku.space/maruti/proctor.php?lo_id=${id}&access_token=${accessToken}&module_id=${moduleId}`,'_blank',false).focus();
       }else{
@@ -256,6 +258,28 @@ const CourseOverview = () => {
       }
       
     }
+  };
+
+  const getProctor = (link) => {
+    let config = {
+      headers: {
+        header1: "test",
+      },
+    };
+    var formdata = new FormData();
+    formdata.append("user_id", userdataRes?.data?.id);
+    formdata.append("user_name", userdataRes?.data?.attributes?.name);
+    formdata.append("email", userdataRes?.data?.attributes?.email);
+    formdata.append("course_id", response?.data?.id);
+    formdata.append("course_name", response?.data?.attributes?.localizedMetadata[0].name);
+    formdata.append("link", link);
+    axios
+      .post("https://viku.space/maruti/proctortrack.php", formdata, config)
+      .then((response) => {
+        if (response.data && response.data.success == true) {
+          window.open(response.data.data.url);
+        }
+      });
   };
 
   const getCart = () => {
@@ -559,12 +583,8 @@ const CourseOverview = () => {
       getDataEnrollmentUser(id)
       getCatLabels(id);
     }
-  }, [id, adminAccessToken]);
-
-
   
-
-
+  }, [id, adminAccessToken]);
   
 
   // useEffect(() => {
