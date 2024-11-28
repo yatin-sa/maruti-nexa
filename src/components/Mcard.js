@@ -21,7 +21,7 @@ const Mcard = ({
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
     const handleClick = (event, id) => {
-       if(isPratham || id=='learningProgram:124089'){
+       if(isPratham || id=='learningProgram:132091'){
        
         if (id.includes('learningProgram')) {
             navigate(`/learning-path/${id}`);
@@ -35,7 +35,7 @@ const Mcard = ({
 
     return (
         <>
-            <div  className={(isPratham || loid=="learningProgram:124089") ? "card maruti_card" : "card maruti_card maruti_card1"}>
+            <div  className={(isPratham || loid=="learningProgram:132091") ? "card maruti_card" : "card maruti_card maruti_card1"}>
                 <img src={img_path} className="maruti_card_img" />
                 <div className="maruti_card_caption">
                     <div className="maruti_card_caption_left">

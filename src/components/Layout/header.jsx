@@ -142,7 +142,7 @@ const HeaderLayout = () => {
                   </li>
                   <li className="nav-item">
                     <a title="Content Catalog" className={(location.pathname.includes('/all-learnings')) ? "nav-link  active" : "nav-link "} href="/all-learnings">
-                      <img src={(location.pathname.includes('/learning-path/learningProgram:124089')) ? "/MarutiSuzuki_Assets/learningpath_icon_focus.png" : "/MarutiSuzuki_Assets/learningpath_icon.png"} />
+                      <img src={(location.pathname.includes('/learning-path/learningProgram:132091')) ? "/MarutiSuzuki_Assets/learningpath_icon_focus.png" : "/MarutiSuzuki_Assets/learningpath_icon.png"} />
                     <span className="menuTitle">Content Catalog</span>
                      </a>
                   </li>
