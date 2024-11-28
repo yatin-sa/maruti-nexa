@@ -129,13 +129,13 @@ const Home = () => {
       console.log(e);
     }
   };
-
+  
   const getDataParamb = async () => {
     try {
       await loReq({
         axiosInstance: axiosPrivate,
         method: "GET",
-        endpoint: "/learningObjects/learningProgram%3A124089?include=enrollment"
+        endpoint: "/learningObjects/learningProgram%3A132091?include=enrollment"
       });
     } catch (e) {
       console.log(e);
@@ -315,7 +315,7 @@ const Home = () => {
     }
 
     // For development. remove once development completed
-    setPratham(true);
+    // setPratham(true);
   }, [loRes]);
 
   
