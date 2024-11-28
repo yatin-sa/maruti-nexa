@@ -2131,11 +2131,18 @@ const LearningOverview = () => {
             )} */}
         </div>
       ) : (
-        <div style={{position:"fixed",width:"100%",zIndex:"99999"}}>
-        <div style={{ height: "100vh", width: "100%" }}>
-          <iframe src={src}  height="100%" width="100%"></iframe>
+        <div style={{ position:"fixed", height:"100vh", width:"100%",zIndex:"99999" }}>
+          <iframe
+            src={src}
+            title="fluidic_player"
+            height="100%"
+            width="100%"
+            webkitallowfullscreen=""
+            mozallowfullscreen=""
+            msallowfullscreen=""
+            allowfullscreen=""
+          ></iframe>
         </div>
-         </div>
       )}
     </>
   );
