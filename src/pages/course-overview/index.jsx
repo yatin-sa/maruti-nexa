@@ -222,10 +222,7 @@ const CourseOverview = () => {
   //   console.log("includes", CatalogCourse.includes(id));
 
   const handleContinueClick = async (moduleId, enroll = false, price) => {
-    if (enroll === true && price && !ExistSubs) {
-      addToCart();
-      // navigate(`/license/${id}`);
-    } else if (enroll === true) {
+   if (enroll === true) {
       await userenrollmentReq({
         axiosInstance: axiosPrivate,
         method: "POST",
@@ -365,7 +362,8 @@ const CourseOverview = () => {
       inp?.data?.attributes?.price &&
       !ExistSubs
     ) {
-      return "Buy now | $" + response?.data?.attributes?.price;
+      return "Enroll";
+      // return "Buy now | $" + response?.data?.attributes?.price;
     } else {
       return "Enroll";
     }
@@ -493,6 +491,8 @@ const CourseOverview = () => {
     if (!isEmpty(userenrollRes?.data)) {
       toast.success("You have been successfully enrolled");
       getDataById(id);
+      getDataEnrollmentUser(id)
+      
     }
   }, [userenrollRes]);
 
@@ -651,7 +651,7 @@ const CourseOverview = () => {
                     <Skeleton variant="rectangular" height={50} />
                   ) : (
                     <>
-                      {isNil(enrollRes?.included) &&
+                      {/* {isNil(enrollRes?.included) &&
                         enrollRes?.data?.attributes?.price &&
                         !ExistSubs ? (
                         <div className="radio-buttons-container">
@@ -692,7 +692,7 @@ const CourseOverview = () => {
                         </div>
                       ) : (
                         ""
-                      )}
+                      )} */}
                       {cart &&
                         cart.cart_type == "subscription" &&
                         isEmpty(enrollRes?.included) &&

@@ -241,9 +241,9 @@ const HeaderLayout = () => {
                     <li>
                       <a className="dropdown-item" href="/Social">Social Learning</a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a className="dropdown-item" href="http://54.152.80.48:3000/signup">Admin</a>
-                    </li>
+                    </li> */}
                     <li>
                       <a className="dropdown-item" onClick={handleLogout}>Logout</a>
                     </li>
