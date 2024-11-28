@@ -707,20 +707,20 @@ const CourseOverview = () => {
                         enrollRes.included[0]?.attributes &&
                         enrollRes.included[0]?.attributes?.state ? (
                         ""
-                      ) : cart && cart.zimvie_cart_id ? (
-                        <a href="/payment">
-                          <div className="shop_head">
-                            <span
-                              style={{
-                                border: "1px solid #2d3494",
-                                padding: "10px",
-                                borderRadius: "100%",
-                              }}
-                            >
-                              <ShoppingCartIcon color="primary" />
-                            </span>
-                          </div>
-                        </a>
+                      ) : cart && cart.zimvie_cart_id ? (""
+                        // <a href="/payment">
+                        //   <div className="shop_head">
+                        //     <span
+                        //       style={{
+                        //         border: "1px solid #2d3494",
+                        //         padding: "10px",
+                        //         borderRadius: "100%",
+                        //       }}
+                        //     >
+                        //       <ShoppingCartIcon color="primary" />
+                        //     </span>
+                        //   </div>
+                        // </a>
                       ) : (
                         ""
                       )}
