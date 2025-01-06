@@ -19,7 +19,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { isEmpty, isNil } from "lodash";
 import { useNavigate } from "react-router-dom";
-import { getCredentials } from "../../features/Auth/authSlice";
+import { getCredentials,getPratham } from "../../features/Auth/authSlice";
 import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import Classroom from "../classroom";
@@ -104,6 +104,7 @@ const CourseOverview = () => {
 
   const [src, setSrc] = useState("");
   const auth = useSelector(getCredentials);
+  const isPratham = useSelector(getPratham);
   const adminAccessToken = useSelector(getAdminAccessToken);
   const navigate = useNavigate();
   const { accessToken } = auth;
@@ -996,7 +997,7 @@ const CourseOverview = () => {
 
           <div className="ms_recomm">
             <div className="container">
-              <RecommendedMaruti lo={true} type="peer_group" />
+              <RecommendedMaruti lo={true} type="peer_group"  pratham={isPratham}  />
             </div>
           </div>
           {badgeimage !== "" && (

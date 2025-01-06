@@ -43,7 +43,7 @@ import Fade from "@mui/material/Fade";
 import Backdrop from "@mui/material/Backdrop";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { getAdminAccessToken } from "../../features/Auth/authSlice";
+import { getAdminAccessToken,getPratham } from "../../features/Auth/authSlice";
 import CouponList from "../../components/Coupon";
 import QuizDayLO from "../../components/QuizBar";
 import Announcements from "../../components/Announcements";
@@ -54,7 +54,6 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import ReactTimeAgo from 'react-time-ago'
 import CalendarWidget from "./CalendarWidget";
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -97,7 +96,8 @@ const Home = () => {
   const adminAccessToken = useSelector(getAdminAccessToken);
   const [userGamification, setUserGamification] = useState('');
   const [LoSrc, setLoSrc] = useState("");
-  const [pratham, setPratham] = useState(false);
+  const pratham = useSelector(getPratham);
+  
   
   let params = new URLSearchParams(response?.links?.next);
   let next1 = params.get("page[cursor]");
@@ -298,21 +298,22 @@ const Home = () => {
   }, [userdataRes]);
 
   useEffect(() => {
-    if (loRes && loRes.included) {
-      const enrollStaus = loRes.included.filter(
-        (x) => x.type === "learningObjectInstanceEnrollment"
-      );
-      if(enrollStaus && enrollStaus.length>0){
-        var enrollPratham = enrollStaus[0]?.attributes?.progressPercent
-        console.log('gygyggygygygygygygygygyggyg ',enrollStaus[0])
-        if(enrollPratham==100){
-          setPratham(true)
-        }else{
-          setPratham(false)
-        }
-      }
+    // if (loRes && loRes.included) {
+    //   const enrollStaus = loRes.included.filter(
+    //     (x) => x.type === "learningObjectInstanceEnrollment"
+    //   );
+    //   if(enrollStaus && enrollStaus.length>0){
+    //     var enrollPratham = enrollStaus[0]?.attributes?.progressPercent
+    //     console.log('gygyggygygygygygygygygyggyg ',enrollStaus[0])
+    //     if(enrollPratham==100){
+    //       dispatch(setPrathamLO({ pratham: true }));
+    //       setPratham(true)
+    //     }else{
+    //       setPratham(false)
+    //     }
+    //   }
     
-    }
+    // }
 
     // For development. remove once development completed
     // setPratham(true);

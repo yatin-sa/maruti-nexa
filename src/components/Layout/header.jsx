@@ -9,7 +9,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { getCredentials, logOut } from "../../features/Auth/authSlice";
+import { getCredentials, logOut ,setPrathamLO} from "../../features/Auth/authSlice";
 import Avatar from "@mui/material/Avatar";
 import useAxios from "../../hooks/useAxios";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
@@ -32,7 +32,7 @@ const HeaderLayout = () => {
   const [adminrole, setAdminRole] = useState(false);
   const [headerClass, setHeaderClass] = useState('fixed-top');
   const [searchExpanded, setSearchExpanded] = useState(false);
-
+  const { axiosReq: loReq, response: loRes } = useAxios();
   console.log(location.pathname);
   const handleLogout = () => {
     dispatch(logOut());
@@ -90,12 +90,16 @@ const HeaderLayout = () => {
   }, [response]);
 
   useEffect(() => {
-    if (!isNil(accessToken)) getUser();
+    if (!isNil(accessToken)) {
+      getUser();
+      getDataParamb()
+    }
   }, [accessToken]);
 
   const wrapperRef = useRef(null);
 
   useEffect(() => {
+   
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         setSearchExpanded(false);
@@ -107,6 +111,33 @@ const HeaderLayout = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const getDataParamb = async () => {
+    try {
+      await loReq({
+        axiosInstance: axiosPrivate,
+        method: "GET",
+        endpoint: "/learningObjects/learningProgram%3A132091?include=enrollment"
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    if (loRes && loRes.included) {
+      const enrollStaus = loRes.included.filter(
+        (x) => x.type === "learningObjectInstanceEnrollment"
+      );
+      if(enrollStaus && enrollStaus.length>0){
+        var enrollPratham = enrollStaus[0]?.attributes?.progressPercent
+        console.log('gygyggygygygygygygygygyggyg ',enrollStaus[0])
+        if(enrollPratham==100){
+          dispatch(setPrathamLO({ pratham: true }));
+        }
+      }
+    }
+  }, [loRes]);
 
 
   if (isNil(accessToken)) return <></>;
